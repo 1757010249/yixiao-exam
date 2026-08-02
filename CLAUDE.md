@@ -48,6 +48,7 @@ templates/          # 条目模板
 - 每条错题文件记录。exam_source、module、sub_module、knowledge_points、correct_answer、difficulty
 - 每次录入错题后，同步更新 `errors/index.md` 的统计（按知识点和模块两个维度）
 - **每周真题测试错题更新流程**。用户每次完成一套真题后，将新增错题记入 errors/items/（文件命名 `日期-科目-序号.md`），同步更新 errors/index.md 统计
+- **错题本版本对比**。用户会提供新的错题本 PDF（在旧版基础上已完成新增/删除）。每次拿到新版 PDF，Claude 与旧版 PDF 做全文对比：识别新增错题（新错题或重复仍错）、删除错题（重复答对），汇总知识点变化。更新错题本到最新版，并生成对比报告存 `errors/versions/对比报告-日期.md`（模板见 templates/error-version-compare.md）。核心对比知识点维度（各知识点错题数增减 + 新增/删除的知识点明细），同步更新 errors/index.md 统计和 errors/weak-points-analysis.md 薄弱分析
 
 ### 4. 知识索引维护
 

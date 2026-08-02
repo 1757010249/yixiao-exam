@@ -37,7 +37,40 @@
       "Bash(git add *)",
       "Bash(git commit -m '初始化一级消防工程师备考知识库 *)",
       "Bash(git push *)",
-      "Bash(git commit -m '补充笔记质疑确认的知识点 *)"
+      "Bash(git commit -m '补充笔记质疑确认的知识点 *)",
+      "Bash(curl -s --connect-timeout 10 -x \"http://127.0.0.1:7890\" -H \"Authorization: token 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\" \"https://api.github.com/repos/1757010249/yixiao-fire-exam\")",
+      "Bash(node -e \"const d=require\\('/dev/stdin'\\);\")",
+      "Bash(curl -s --connect-timeout 10 -x \"http://127.0.0.1:7890\" -H \"Authorization: token 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\" \"https://api.github.com/repos/1757010249/yixiao-fire-exam\" -o repo-info.json)",
+      "Bash(node -e \"const d=require\\('./repo-info.json'\\); console.log\\('仓库:', d.full_name, '| 私有:', d.private, '| 大小:', \\(d.size/1024\\).toFixed\\(1\\)+'MB', '| 默认分支:', d.default_branch\\)\")",
+      "Bash(npx skills *)",
+      "Bash(cd c:/1xiangmu/yixiao && echo \"=== 项目内安装位置 ===\"; ls -la .claude/skills/find-skills 2>&1; echo \"---\"; ls -la .agents/skills/find-skills/ 2>&1; echo \"=== 用户级 skills 目录 ===\"; ls -la \"C:/Users/1/.claude/skills/\" 2>&1 | head -10; echo \"=== 检查是否有全局安装 ===\"; ls -la \"C:/Users/1/.agents/skills/\" 2>&1 | head -5)",
+      "Read(//c/Users/1/.claude/**)",
+      "Read(//c/Users/1/.agents/**)",
+      "Read(//c/Users/1/.agents/skills/find-skills/**)",
+      "Read(//c/Users/1/.claude/skills/**)",
+      "Bash(cd c:/1xiangmu/yixiao && echo \"=== 删除前确认 ===\"; ls -la .claude/skills/find-skills .agents/skills/find-skills 2>&1; echo \"=== 删除项目内残留 ===\"; rm -rf .claude/skills/find-skills .agents/skills/find-skills 2>&1; echo \"=== 删除后确认 ===\"; ls .claude/skills/ 2>&1; ls .agents/skills/ 2>&1 | head -5; echo \"---检查全局是否完好---\"; ls -la \"C:/Users/1/.claude/skills/find-skills\" 2>&1)",
+      "Bash(cd c:/1xiangmu/yixiao && ls -d */ 2>/dev/null; echo \"---父目录---\"; ls c:/1xiangmu/ 2>/dev/null)",
+      "Read(//c/1xiangmu/**)",
+      "Bash(mkdir -p c:/1xiangmu/zhuan)",
+      "Read(//c/1xiangmu/zhuan//**)",
+      "Read(//c/1xiangmu/zhuan/**)",
+      "Bash(mkdir -p /c/1xiangmu/zhuan/tools)",
+      "Bash(cp tools/extract.js tools/ocr-parallel.sh tools/ocr.sh tools/ocr-batch.sh tools/package.json /c/1xiangmu/zhuan/tools/)",
+      "Read(//c/1xiangmu/zhuan/tools/**)",
+      "Bash(npm install *)",
+      "Bash(node tools/extract.js)",
+      "Bash(\"C:/Program Files/Tesseract-OCR/tesseract.exe\" --version)",
+      "Read(//c/Users/1/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin/**)",
+      "Read(//c/1xiangmu/zhuan/tools//**)",
+      "Bash(mkdir -p tessdata)",
+      "Bash(cp /c/1xiangmu/yixiao/tools/tessdata/chi_sim.traineddata tessdata/)",
+      "Bash(mkdir -p extracted)",
+      "Bash(node extract.js \"/c/1xiangmu/yixiao/materials/past-exams/2020年实务真题.pdf\" 1 2)",
+      "Bash(rm -rf ocr-tmp extracted)"
+    ],
+    "additionalDirectories": [
+      "c:\\1xiangmu\\zhuan",
+      "c:\\1xiangmu\\zhuan\\tools"
     ]
   }
 }
