@@ -1,0 +1,2 @@
+# PDF 教材用 Git LFS 管理
+*.pdf filter=lfs diff=lfs merge=lfs -text

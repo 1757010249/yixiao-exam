@@ -1,0 +1,13 @@
+# Node dependencies
+tools/node_modules/
+
+# OCR language data (re-downloadable)
+tools/tessdata/
+
+# Temporary files
+tools/ocr-tmp/
+*.tmp
+
+# OS files
+Thumbs.db
+.DS_Store
