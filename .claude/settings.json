@@ -34,7 +34,10 @@
       "Bash(rm -f repo.json)",
       "Bash(git init *)",
       "Bash(git remote *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m '初始化一级消防工程师备考知识库 *)",
+      "Bash(git push *)",
+      "Bash(git commit -m '补充笔记质疑确认的知识点 *)"
     ]
   }
 }
