@@ -11,3 +11,9 @@ tools/ocr-tmp/
 # OS files
 Thumbs.db
 .DS_Store
+
+# vision-bridge MCP 视觉描述缓存
+.ai/
+
+# Claude Code 本地私有配置(含权限,不入库)
+.claude/settings.local.json
