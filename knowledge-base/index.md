@@ -12,12 +12,22 @@
 | 文件 | 覆盖状态 | 说明 |
 |---|---|---|
 | building-fire-protection/overview.md | 已完成 | 模块概览 + 知识脉络图 |
+| building-fire-protection/building-classification.md | 已完成 | 建筑分类（超高层+150m分级） |
 | building-fire-protection/fire-classification.md ⚑ | 已完成 | 火灾危险性分类（口诀+易混点） |
 | building-fire-protection/fire-resistance.md ⚑ | 已完成 | 耐火等级（构件表+放宽） |
 | building-fire-protection/site-layout.md ⚑ | 已完成 | 总平面布局（防火间距+消防车道） |
 | building-fire-protection/building-plane.md ⚑ | 已完成 | 平面布置（设备用房+功能用房） |
 | building-fire-protection/evacuation.md ⚑ | 已完成 | 安全疏散（楼梯间+宽度+距离） |
 | building-fire-protection/decoration.md ⚑ | 已完成 | 装修防火（材料分级+保温） |
+| building-fire-protection/fire-basics.md | 已完成 | 火灾基础知识（燃烧+火灾分类+爆炸） |
+| building-fire-protection/fire-partition.md | 已完成 | 防火分区（厂房/仓库/民用/中庭） |
+| building-fire-protection/fire-separation.md | 已完成 | 防火分隔（防火墙/卷帘/门/阀） |
+| building-fire-protection/explosion-prevention.md | 已完成 | 建筑防爆（区域划分+泄压+电气防爆） |
+| building-fire-protection/electrical-fire.md | 已完成 | 电气防火（灯具/电缆/照明/电动机） |
+| building-fire-protection/ventilation-heating.md | 已完成 | 通风采暖防火（供暖/除尘/锅炉房） |
+| building-fire-protection/fire-fighting-rescue.md | 已完成 | 灭火救援设施（救援窗/消防电梯/停机坪） |
+| building-fire-protection/covered-pedestrian-street.md | 已完成 | 有顶棚的步行街（5.3.6条） |
+| building-fire-protection/special-places.md | 已完成 | 特殊场所（信息机房/数据中心+城市隧道，视觉重跑OCR新增） |
 
 ### 消防设施
 
@@ -27,13 +37,17 @@
 | fire-facilities/water/overview.md | 已完成 | 水系统 |
 | fire-facilities/water/fire-hydrant.md ⚑ | 已完成 | 消火栓系统 |
 | fire-facilities/water/automatic-sprinkler.md ⚑ | 已完成 | 自动喷水灭火系统 |
-| fire-facilities/water/water-supply.md ⚑ | 已完成 | 消防给水+消防水泵 |
+| fire-facilities/water/water-supply.md ⚑ | 已完成 | 消防给水+消防水泵+消防水箱 |
 | fire-facilities/electrical/alarm.md ⚑ | 已完成 | 火灾自动报警系统 |
 | fire-facilities/electrical/emergency-lighting.md ⚑ | 已完成 | 应急照明与疏散指示 |
 | fire-facilities/hvac/smoke-control.md ⚑ | 已完成 | 防排烟系统 |
 | fire-facilities/gas-extinguishing.md ⚑ | 已完成 | 气体灭火系统（七氟丙烷/IG541/CO2） |
 | fire-facilities/water/water-mist.md ⚑ | 已完成 | 水喷雾与细水雾 |
+| fire-facilities/water/auto-tracking-jet.md | 已完成 | 自动跟踪定位射流灭火 |
 | fire-facilities/fire-extinguisher.md | 已完成 | 灭火器 |
+| fire-facilities/dry-powder.md | 已完成 | 干粉灭火系统 |
+| fire-facilities/foam-extinguishing.md | 已完成 | 泡沫灭火系统（P177-179，视觉重跑OCR新增） |
+| fire-facilities/electrical/power-supply.md | 已完成 | 消防供配电 |
 
 ### 安全管理
 
@@ -42,6 +56,7 @@
 | safety-management/overview.md | 已完成 | 模块概览 |
 | safety-management/responsibility.md | 已完成 | 消防安全责任制 |
 | safety-management/inspection.md | 已完成 | 检查与维护 |
+| safety-management/commercial-complex.md | 已完成 | 大型商业综合体 |
 
 ### 法律法规
 
@@ -56,6 +71,9 @@
 
 | 标签 | 相关文件 |
 |---|---|
+| 建筑分类 | building-classification.md |
+| 超高层 | building-classification.md |
+| 150m分级 | building-classification.md |
 | 火灾危险性分类 | fire-classification.md |
 | 耐火等级 | fire-resistance.md, fire-classification.md |
 | 防火间距 | site-layout.md |
@@ -65,21 +83,81 @@
 | 装修防火 | decoration.md |
 | 建筑保温 | decoration.md |
 | 安全疏散 | evacuation.md |
+| 避难层 | evacuation.md |
 | 疏散楼梯 | evacuation.md |
+| 火灾基础知识 | fire-basics.md |
+| 燃烧 | fire-basics.md |
+| 火灾分类 | fire-basics.md |
+| 火灾等级 | fire-basics.md |
+| 轰燃/回燃 | fire-basics.md |
+| 爆炸分类 | fire-basics.md |
+| 粉尘爆炸 | fire-basics.md |
+| 爆炸极限 | fire-basics.md |
+| 防火分区 | fire-partition.md |
+| 中庭 | fire-partition.md |
+| 防火分隔 | fire-separation.md |
+| 防火墙 | fire-separation.md |
+| 防火卷帘 | fire-separation.md |
+| 防火门 | fire-separation.md |
+| 防火阀/排烟防火阀 | fire-separation.md |
+| 建筑防爆 | explosion-prevention.md |
+| 泄压 | explosion-prevention.md |
+| 电气防爆 | explosion-prevention.md |
+| 电气防火 | electrical-fire.md |
+| 电线电缆 | electrical-fire.md |
+| 电动机防火 | electrical-fire.md |
+| 通风采暖防火 | ventilation-heating.md |
+| 锅炉房 | ventilation-heating.md |
+| 灭火救援设施 | fire-fighting-rescue.md |
+| 消防电梯 | fire-fighting-rescue.md |
+| 消防救援口 | fire-fighting-rescue.md |
+| 直升机停机坪 | fire-fighting-rescue.md |
+| 有顶棚的步行街 | covered-pedestrian-street.md |
+| 干粉灭火 | dry-powder.md |
+| BC/ABC干粉 | dry-powder.md |
+| 自动消防炮 | auto-tracking-jet.md |
+| 喷射型自动射流 | auto-tracking-jet.md |
+| 喷洒型自动射流 | auto-tracking-jet.md |
+| 高大空间 | auto-tracking-jet.md |
+| 消防用电负荷 | power-supply.md |
+| 一级负荷/二级负荷 | power-supply.md |
+| 应急电源 | power-supply.md |
+| 末端切换 | power-supply.md |
 | 消防给水 | water-supply.md |
+| 火灾延续时间 | water-supply.md |
+| 消防水箱 | water-supply.md |
 | 消防水泵 | water-supply.md |
 | 自动喷水灭火 | automatic-sprinkler.md |
 | 湿式/干式/预作用/雨淋 | automatic-sprinkler.md |
+| 灭火器 | fire-extinguisher.md |
+| 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
 | 火灾自动报警 | alarm.md |
 | 应急照明 | emergency-lighting.md |
 | 防排烟 | smoke-control.md |
 | 消防安全责任 | responsibility.md |
 | 消防安全重点单位 | responsibility.md |
+| 大型商业综合体 | commercial-complex.md |
+| 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
+| 专职消防队 | commercial-complex.md |
+| 微型消防站 | commercial-complex.md |
 | 防火检查/巡查 | inspection.md |
 | 消防档案 | inspection.md |
+| 重大火灾隐患 | inspection.md |
+| 应急预案 | inspection.md |
+| 剧本杀/密室逃脱 | inspection.md |
+| 人员密集场所 | inspection.md |
 | 行政处罚 | penalties.md |
 | 消防技术服务机构 | penalties.md |
+| 泡沫灭火 | foam-extinguishing.md |
+| 液上喷射 | foam-extinguishing.md |
+| 液下喷射 | foam-extinguishing.md |
+| 泡沫液 | foam-extinguishing.md |
+| 外浮顶储罐 | foam-extinguishing.md |
+| 特殊场所 | special-places.md |
+| 信息机房/数据中心 | special-places.md |
+| 城市隧道 | special-places.md |
+| 隧道排烟 | special-places.md |
 
 ## 奇门遁甲来源条目
 
@@ -101,13 +179,14 @@
 ## OCR 处理状态
 
 > 维护规则。图片版 PDF 经 OCR 后登记，文本存于 `tools/extracted/`，文件名 `原名.ocr.txt`。
+> 2026-08-04 起用视觉模型（DashScope qwen-vl-max）重跑质量差的图片版 OCR，新文本存于 `tools/extracted-vision/`，文件名 `原名.ocr.txt`（视觉重跑版质量更高，乱码率下降17-61%）。
 
-| 文件 | 页数 | OCR 状态 | 文本文件 |
-|---|---|---|---|
-| 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt |
-| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt |
-| 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt |
-| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt |
-| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt |
-| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt |
-| 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt |
+| 文件 | 页数 | OCR 状态 | 文本文件 | 视觉重跑 |
+|---|---|---|---|---|
+| 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt | ✅ tools/extracted-vision/（280/280） |
+| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ⚠️ tools/extracted-vision/（179/392，余额耗尽） |
+| 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/（100/100） |
+| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ⏸ 未重跑 |
+| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ⏸ 未重跑 |
+| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ⏸ 未重跑 |
+| 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑 |

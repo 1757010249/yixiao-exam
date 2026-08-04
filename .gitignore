@@ -1,14 +1,27 @@
-# Node dependencies
+# Node 依赖
+/node_modules/
 tools/node_modules/
 
-# OCR language data (re-downloadable)
+# OCR 语言数据（可重新下载）
 tools/tessdata/
 
-# Temporary files
+# 临时与中间产物
 tools/ocr-tmp/
+/tmp/
+/tmp_pdf_pages/
 *.tmp
+batch*.log
 
-# OS files
+# 视觉模型运行缓存（vision-bridge 的图片粘贴与识别缓存）
+/.ai/
+
+# 用户原始输入（个人笔记，不提交）
+/notes/
+
+# 本地个人配置（不提交）
+.claude/settings.local.json
+
+# OS 文件
 Thumbs.db
 .DS_Store
 
