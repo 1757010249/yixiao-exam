@@ -203,7 +203,7 @@
 | 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt | ✅ tools/extracted-vision/（280/280） |
 | 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ✅ tools/extracted-vision/（392/392） |
 | 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/（100/100） |
-| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ⏸ 未重跑 |
+| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ✅ tools/extracted-vision/（314/314） |
 | 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ⏸ 未重跑 |
 | 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ⏸ 未重跑 |
 | 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑 |

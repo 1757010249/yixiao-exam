@@ -16,7 +16,7 @@ const ROOT = 'C:/1xiangmu/yixiao';
 const OUT_DIR = path.join(ROOT, 'tools/extracted-vision');
 const TMP_DIR = path.join(os.tmpdir(), 'vocr');
 const PPM = 'C:/Users/1/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin/pdftoppm.exe';
-const CONCURRENCY = 2; // 并发视觉调用数（火山豆包实测并发2最快，DashScope qwen为并发3）
+const CONCURRENCY = 3; // 并发视觉调用数（火山豆包实测并发2最快，DashScope qwen为并发3，maas qwen3.5-omni 无限流迹象可到3）
 const DPI = 150;
 
 const BOOKS = {
@@ -45,7 +45,9 @@ function loadConfig() {
 async function callVision(dataUrl) {
   const env = loadConfig();
   const baseUrl = env.VISION_BRIDGE_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1';
-  const models = (env.VISION_BRIDGE_MODELS || 'qwen-vl-max').split(',');
+  // 过滤 realtime 模型：它们走流式接口，标准 chat/completions 调用返回 200 但无 choices（空内容）
+  const models = (env.VISION_BRIDGE_MODELS || 'qwen-vl-max')
+    .split(',').filter(m => !/realtime/i.test(m));
   const apiKey = env.VISION_BRIDGE_API_KEY;
   const prompt = 'Extract ALL visible text verbatim. Preserve line breaks and structure. Output ONLY the text content, no commentary.';
 
@@ -70,7 +72,10 @@ async function callVision(dataUrl) {
         continue;
       }
       const data = await resp.json();
-      return { text: data.choices?.[0]?.message?.content?.trim() || '', model };
+      const text = (data.choices?.[0]?.message?.content || '').trim();
+      // 返回 200 但无内容（realtime 模型兼容问题）视为失败，重试下一个模型
+      if (!text) { lastErr = new Error(`模型 ${model} 返回空内容`); continue; }
+      return { text, model };
     } catch (e) {
       lastErr = e;
     }
