@@ -28,6 +28,7 @@
 | building-fire-protection/fire-fighting-rescue.md | 已完成 | 灭火救援设施（救援窗/消防电梯/停机坪） |
 | building-fire-protection/covered-pedestrian-street.md | 已完成 | 有顶棚的步行街（5.3.6条） |
 | building-fire-protection/special-places.md | 已完成 | 特殊场所（信息机房/数据中心+城市隧道，视觉重跑OCR新增） |
+| building-fire-protection/special-buildings.md | 已完成 | 特殊建筑考点汇总（锅炉/医疗/儿童/影院/老年人/歌舞/商业网点，竖向P50-58新增） |
 
 ### 消防设施
 
@@ -57,6 +58,7 @@
 | safety-management/responsibility.md | 已完成 | 消防安全责任制 |
 | safety-management/inspection.md | 已完成 | 检查与维护 |
 | safety-management/commercial-complex.md | 已完成 | 大型商业综合体 |
+| safety-management/periods-summary.md | 已完成 | 管理周期汇总（大商/高层/培训演练/其他，竖向P175新增） |
 
 ### 法律法规
 
@@ -139,6 +141,21 @@
 | 消防安全重点单位 | responsibility.md |
 | 大型商业综合体 | commercial-complex.md |
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
+| 管理周期 | periods-summary.md |
+| 培训演练 | periods-summary.md |
+| 维保周期 | periods-summary.md, inspection.md |
+| 巡检/检查周期 | periods-summary.md |
+| 特殊建筑 | special-buildings.md |
+| 锅炉房 | special-buildings.md, building-plane.md |
+| 医疗建筑 | special-buildings.md |
+| 儿童场所 | special-buildings.md |
+| 电影院 | special-buildings.md |
+| 老年人照料设施 | special-buildings.md |
+| 歌舞娱乐 | special-buildings.md |
+| 商业网点 | special-buildings.md |
+| 安装高度 | overview.md |
+| 消防设备代号 | overview.md |
+| 备用量 | overview.md, gas-extinguishing.md |
 | 专职消防队 | commercial-complex.md |
 | 微型消防站 | commercial-complex.md |
 | 防火检查/巡查 | inspection.md |
@@ -184,7 +201,7 @@
 | 文件 | 页数 | OCR 状态 | 文本文件 | 视觉重跑 |
 |---|---|---|---|---|
 | 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt | ✅ tools/extracted-vision/（280/280） |
-| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ⚠️ tools/extracted-vision/（179/392，余额耗尽） |
+| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ✅ tools/extracted-vision/（392/392） |
 | 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/（100/100） |
 | 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ⏸ 未重跑 |
 | 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ⏸ 未重跑 |
