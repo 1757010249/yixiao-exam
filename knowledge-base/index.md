@@ -131,6 +131,8 @@
 | 消防水泵 | water-supply.md |
 | 自动喷水灭火 | automatic-sprinkler.md |
 | 湿式/干式/预作用/雨淋 | automatic-sprinkler.md |
+| 喷头 | automatic-sprinkler.md |
+| 喷头布置 | automatic-sprinkler.md |
 | 灭火器 | fire-extinguisher.md |
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
@@ -197,6 +199,7 @@
 
 > 维护规则。图片版 PDF 经 OCR 后登记，文本存于 `tools/extracted/`，文件名 `原名.ocr.txt`。
 > 2026-08-04 起用视觉模型（DashScope qwen-vl-max）重跑质量差的图片版 OCR，新文本存于 `tools/extracted-vision/`，文件名 `原名.ocr.txt`（视觉重跑版质量更高，乱码率下降17-61%）。
+> 2026-08-06 续跑 3号书设施篇、5号书综合能力（阿里云 MaaS qwen3-vl-plus / qwen3-vl-flash，PyMuPDF 渲染替代缺失的 pdftoppm）。新 OCR 字符数较旧版多 5-6%，表格结构与条文数字识别准确。6号综合习题经用户决定不重跑。
 
 | 文件 | 页数 | OCR 状态 | 文本文件 | 视觉重跑 |
 |---|---|---|---|---|
@@ -204,6 +207,6 @@
 | 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ✅ tools/extracted-vision/（392/392） |
 | 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/（100/100） |
 | 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ✅ tools/extracted-vision/（314/314） |
-| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ⏸ 未重跑 |
-| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ⏸ 未重跑 |
-| 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑 |
+| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ✅ tools/extracted-vision/（447/447） |
+| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ✅ tools/extracted-vision/（347/347） |
+| 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑（用户决定不重跑） |

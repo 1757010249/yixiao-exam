@@ -48,7 +48,7 @@ related:
 
 ## 灭火器型号解读（P321）
 
-- MEZABC2 / MFZ2 / MFTZ50 / MT5 / MS / Q9 / MS / T9 / MP3 / MPAR3 / MJ / B6 等
+- MFZ/ABC2 / MFZ2 / MFTZ50 / MT5 / MS / Q9 / MS / T9 / MP3 / MPAR3 / MJ / B6 等
 
 ## 适用火灾类型选择（P326）
 
