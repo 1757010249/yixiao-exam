@@ -200,13 +200,14 @@
 > 维护规则。图片版 PDF 经 OCR 后登记，文本存于 `tools/extracted/`，文件名 `原名.ocr.txt`。
 > 2026-08-04 起用视觉模型（DashScope qwen-vl-max）重跑质量差的图片版 OCR，新文本存于 `tools/extracted-vision/`，文件名 `原名.ocr.txt`（视觉重跑版质量更高，乱码率下降17-61%）。
 > 2026-08-06 续跑 3号书设施篇、5号书综合能力（阿里云 MaaS qwen3-vl-plus / qwen3-vl-flash，PyMuPDF 渲染替代缺失的 pdftoppm）。新 OCR 字符数较旧版多 5-6%，表格结构与条文数字识别准确。6号综合习题经用户决定不重跑。
+> 新OCR文件名加"-视觉版"后缀（如 3号书设施篇-视觉版.ocr.txt）以区分旧版；旧版保留在 tools/extracted/ 原名不变。
 
 | 文件 | 页数 | OCR 状态 | 文本文件 | 视觉重跑 |
 |---|---|---|---|---|
-| 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt | ✅ tools/extracted-vision/（280/280） |
-| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ✅ tools/extracted-vision/（392/392） |
-| 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/（100/100） |
-| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ✅ tools/extracted-vision/（314/314） |
-| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ✅ tools/extracted-vision/（447/447） |
-| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ✅ tools/extracted-vision/（347/347） |
+| 奇门遁甲横向 | 280 | ✅ 完成 | tools/extracted/2026齐德龙消防10-齐门遁甲横向.ocr.txt | ✅ tools/extracted-vision/2026齐德龙消防10-齐门遁甲横向-视觉版.ocr.txt（280/280） |
+| 奇门遁甲竖向 | 392 | ✅ 完成 | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt | ✅ tools/extracted-vision/2026齐德龙消防11-齐门遁甲竖向-视觉版.ocr.txt（392/392） |
+| 卡牌大师 | 100 | ✅ 完成 | tools/extracted/26卡牌大师.ocr.txt | ✅ tools/extracted-vision/26卡牌大师-视觉版.ocr.txt（100/100） |
+| 1号书防火篇 | 314 | ✅ 完成 | tools/extracted/1号书26齐德龙技术实物防火篇.ocr.txt | ✅ tools/extracted-vision/1号书26齐德龙技术实物防火篇-视觉版.ocr.txt（314/314） |
+| 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ✅ tools/extracted-vision/3号书设施篇-视觉版.ocr.txt（447/447） |
+| 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ✅ tools/extracted-vision/5号书消防综合能力内页-视觉版.ocr.txt（347/347） |
 | 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑（用户决定不重跑） |

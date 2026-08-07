@@ -138,7 +138,7 @@ def main():
     if not book: print(f'未知书名key: {book_key} 可用: {",".join(BOOKS)}'); sys.exit(1)
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    book_out = os.path.join(OUT_DIR, f'{book["name"]}.ocr.txt')
+    book_out = os.path.join(OUT_DIR, f'{book["name"]}-视觉版.ocr.txt')
 
     # 断点续跑
     done = set()
