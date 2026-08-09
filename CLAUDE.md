@@ -85,6 +85,7 @@ templates/          # 条目模板
 | 错题本运营 | Skill 自动 | `.claude/skills/error-book/SKILL.md` | 错题录入 / 每周真题错题更新 / 错题本版本对比 |
 | 知识索引维护 | 手动指示 | `.claude/rules/knowledge-maintenance.md` | 新增/更新条目后同步 index.md / YAML frontmatter / 新增真题与总结流程 / 输出成果归档详细格式 |
 | 奇门遁甲版本定义 | 手动指示 | `.claude/rules/qimen-dunjia.md` | 横版/竖版/总结/卡牌大师 / 口诀分组文件 |
+| WorkBuddy 建议处理 | 手动指示 | `.claude/rules/wb-suggestion-processing.md` | wb-suggestions/pending/ 有新文件 / 用户说"处理 wb 建议" |
 
 ## 上手流程
 
