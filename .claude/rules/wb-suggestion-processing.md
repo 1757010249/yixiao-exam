@@ -6,8 +6,10 @@
 ## 一、触发时机
 
 - 每次任务开始时，检查 `wb-suggestions/pending/` 是否有新文件
-- 每周同步时，清空全部 pending 积压
+- 每周同步时（与用户一起）清空全部 pending 积压
 - 用户说"处理 wb 建议"时立即执行
+
+**建议登记到台账**：发现 `wb-suggestions/pending/` 有新的建议文件时，先登记到 `wb-suggestions/待处理清单.md`（待处理表），再定期与用户一起处理，避免随时处理打断工作流。
 
 ## 二、认领前检查（git 白名单）
 
@@ -39,7 +41,7 @@ git status --porcelain
 
 ## 五、归档流程
 
-- 处理完的文件从 `pending/` 移到 `archive/`
+- 处理完的文件从 `pending/` 移到 `archive/`，并在 `wb-suggestions/待处理清单.md` 中从"待处理"移到"已处理"
 - **拒绝**的文件，头部 frontmatter 标 `status: rejected` + 在文件中注明拒绝原因
 - **需用户确认**的文件，头部标 `status: pending-user`，待用户答复后处理
 - 已接受并写入的文件，头部标 `status: accepted` + 写明写入的条目路径

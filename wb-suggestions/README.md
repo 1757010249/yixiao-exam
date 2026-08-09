@@ -7,14 +7,19 @@
 
 ```
 wb-suggestions/pending/  ← wb 新建建议文件（YYYY-MM-DD-序号-主题.md）
-        │  Claude Code 认领：逐条读取 + 回查讲义/规范原文（全量检验）
+        │  Claude Code 登记到待处理清单.md（台账）
         ▼
-  知识库写入（接受）         或            归档（拒绝/需确认）
-  knowledge-base/ 对应条目 + index.md 更新          archive/（头部标 status）
+wb-suggestions/待处理清单.md  ← 定期与用户一起处理（建议每周）
+        │  认领：逐条读取 + 回查讲义/规范原文（全量检验）
+        ▼
+  知识库写入（接受）         或                归档（拒绝/需确认）
+  knowledge-base/ 对应条目 + index.md 更新            archive/（头部标 status）
         │                                        │
         ▼                                        ▼
-  wb-suggestions/archive/（处理完留档）
+  wb-suggestions/archive/（处理完留档）       清单"待处理"移到"已处理"
 ```
+
+> 台账 = `wb-suggestions/待处理清单.md`。所有 wb 建议先登记到清单，不随时处理、定期一起处理。
 
 ## 谁写谁读
 

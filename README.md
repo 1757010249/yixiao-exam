@@ -98,7 +98,7 @@ SC-输出成果/        # 笔记校验、知识汇总、分析报告等输出
 | git 提交 | 禁止 | 唯一执行者 |
 
 - wb 的项目规则见根目录 `AGENTS.md`（只读边界 + 回答协议 + 建议流）
-- 建议回流协议见 `wb-suggestions/README.md`，Claude Code 处理规则见 `.claude/rules/wb-suggestion-processing.md`
+- 建议回流协议见 `wb-suggestions/README.md`，建议台账见 `wb-suggestions/待处理清单.md`（定期与用户一起处理），Claude Code 处理规则见 `.claude/rules/wb-suggestion-processing.md`
 
 ---
 
