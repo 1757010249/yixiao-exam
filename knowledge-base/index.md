@@ -18,7 +18,7 @@
 | building-fire-protection/site-layout.md ⚑ | 已完成 | 总平面布局（防火间距+消防车道） |
 | building-fire-protection/building-plane.md ⚑ | 已完成 | 平面布置（设备用房+功能用房） |
 | building-fire-protection/evacuation.md ⚑ | 已完成 | 安全疏散（楼梯间+宽度+距离） |
-| building-fire-protection/decoration.md ⚑ | 已完成 | 装修防火（材料分级+保温） |
+| building-fire-protection/decoration.md ⚑ | 已完成 | 装修防火（材料分级+降级放宽+保温） |
 | building-fire-protection/fire-basics.md | 已完成 | 火灾基础知识（燃烧+火灾分类+爆炸） |
 | building-fire-protection/fire-partition.md | 已完成 | 防火分区（厂房/仓库/民用/中庭） |
 | building-fire-protection/fire-separation.md | 已完成 | 防火分隔（防火墙/卷帘/门/阀） |
@@ -83,6 +83,7 @@
 | 平面布置 | building-plane.md |
 | 设备用房 | building-plane.md |
 | 装修防火 | decoration.md |
+| 装修降级/不降级 | decoration.md |
 | 建筑保温 | decoration.md |
 | 安全疏散 | evacuation.md |
 | 避难层 | evacuation.md |
