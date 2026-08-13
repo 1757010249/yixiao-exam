@@ -47,6 +47,7 @@
 | fire-facilities/water/auto-tracking-jet.md | 已完成 | 自动跟踪定位射流灭火 |
 | fire-facilities/fire-extinguisher.md | 已完成 | 灭火器 |
 | fire-facilities/dry-powder.md | 已完成 | 干粉灭火系统 |
+| fire-facilities/pipe-connection.md | 已完成 | 管道连接方式管径分界汇总（气干80/水50） |
 | fire-facilities/foam-extinguishing.md | 已完成 | 泡沫灭火系统（P177-179，视觉重跑OCR新增） |
 | fire-facilities/electrical/power-supply.md | 已完成 | 消防供配电 |
 
@@ -140,13 +141,18 @@
 | 火灾自动报警 | alarm.md |
 | 应急照明 | emergency-lighting.md |
 | 防排烟 | smoke-control.md |
+| 管道连接 | pipe-connection.md |
+| 螺纹连接 | pipe-connection.md |
+| 法兰连接 | pipe-connection.md |
+| 沟槽连接 | pipe-connection.md |
+| 管径分界 | pipe-connection.md |
 | 消防安全责任 | responsibility.md |
 | 消防安全重点单位 | responsibility.md |
 | 大型商业综合体 | commercial-complex.md |
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
 | 管理周期 | periods-summary.md |
 | 培训演练 | periods-summary.md |
-| 维保周期 | periods-summary.md, inspection.md |
+| 维保周期 | periods-summary.md, inspection.md, water-mist.md |
 | 巡检/检查周期 | periods-summary.md |
 | 特殊建筑 | special-buildings.md |
 | 锅炉房 | special-buildings.md, building-plane.md |
