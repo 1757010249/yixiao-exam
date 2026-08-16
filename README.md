@@ -14,7 +14,7 @@ materials/          # 原始资料归档（讲义/习题/真题/思维导图/奇
 errors/             # 错题本
 diagrams/           # 独立 Mermaid 流程图
 templates/          # 条目模板
-wb-suggestions/     # WorkBuddy 建议回流（wb 只写 pending/，Claude 校验后入库）
+wb-suggestions/     # 问答 Agent 建议回流（问答 agent 只写 pending/，Claude Code 校验后入库）
 SC-输出成果/        # 笔记校验、知识汇总、分析报告等输出
 ```
 
@@ -79,7 +79,7 @@ SC-输出成果/        # 笔记校验、知识汇总、分析报告等输出
 
 | 场景 | 操作 |
 |---|---|
-| 知识问答 | 直接提问，Claude 按知识库 + 规范条文作答 |
+| 知识问答 | 直接提问，问答 Agent（DeepSeek）按知识库 + 规范条文作答 |
 | 笔记校验 | 提交笔记/讲义，Claude 逐条与知识库核对 |
 | 错题录入 | 完成真题后提交错题，录入 errors/items/ |
 | 错题本更新 | 提供新版错题本 PDF，生成版本对比报告 |
@@ -87,9 +87,9 @@ SC-输出成果/        # 笔记校验、知识汇总、分析报告等输出
 
 ## 四、双 Agent 协作分工
 
-本项目由 **WorkBuddy（wb）** 与 **Claude Code** 协作维护：
+本项目由 **问答 Agent（原 WorkBuddy「wb」，现由 DeepSeek 承担）** 与 **Claude Code** 协作维护：
 
-| 事项 | WorkBuddy | Claude Code |
+| 事项 | 问答 Agent（DeepSeek） | Claude Code |
 |---|---|---|
 | 日常问答 | 负责（读知识库作答） | — |
 | 知识库写入 / 索引更新 | 禁止（只读） | 负责 |
@@ -97,7 +97,7 @@ SC-输出成果/        # 笔记校验、知识汇总、分析报告等输出
 | 盲区建议回流 | 写 wb-suggestions/pending/ | 校验后写入 knowledge-base/ |
 | git 提交 | 禁止 | 唯一执行者 |
 
-- wb 的项目规则见根目录 `AGENTS.md`（只读边界 + 回答协议 + 建议流）
+- 问答 agent 的项目规则见根目录 `AGENTS.md`（只读边界 + 回答协议 + 建议流）
 - 建议回流协议见 `wb-suggestions/README.md`，建议台账见 `wb-suggestions/待处理清单.md`（定期与用户一起处理），Claude Code 处理规则见 `.claude/rules/wb-suggestion-processing.md`
 
 ---
