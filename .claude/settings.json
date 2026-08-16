@@ -178,7 +178,14 @@
       "Bash(cd \"c:/1xiangmu/yixiao\" && echo \"=== offcn 密度表 上下文 ===\" && grep -o \"0.56[^<]\\\\{0,200\\\\}\\\\|0.43[^<]\\\\{0,200\\\\}\\\\|地下二层[^<]\\\\{0,100\\\\}\" /tmp/offcn_density.html | head -8; echo \"=== 折减 关键词 ===\" && grep -c \"折减\" /tmp/offcn_density.html)",
       "Edit(/.claude/skills/error-book/**)",
       "Bash(grep -v \"^-$\")",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(git ls-remote *)",
+      "mcp__vision-bridge__describe_paste",
+      "mcp__vision-bridge__list_recent_pastes",
+      "mcp__vision-bridge__describe_clipboard",
+      "mcp__vision-bridge__vision_status",
+      "mcp__vision-bridge__describe_image",
+      "Bash(git commit -m ' *)"
     ],
     "additionalDirectories": [
       "c:\\1xiangmu\\zhuan",
