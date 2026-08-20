@@ -35,3 +35,9 @@ Thumbs.db
 .env
 .opencode-lark/
 /data/
+
+# ima 同步凭证与本地状态（不入库）
+.opencode/ima-sync.config
+.opencode/ima-folder-map.json
+.opencode/ima-sync-state.tsv
+.opencode/ima-pulled-notes.json
