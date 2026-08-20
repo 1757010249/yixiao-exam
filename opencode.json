@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "deepseek/deepseek-v4-pro",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "plugin": [
+    "opencode-supermemory@latest"
+  ],
+  "mcp": {
+    "vision-bridge": {
+      "type": "local",
+      "command": ["npx", "-y", "vision-bridge-mcp@latest"],
+      "environment": {
+        "VISION_BRIDGE_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "VISION_BRIDGE_API_KEY": "${VISION_BRIDGE_API_KEY}",
+        "VISION_BRIDGE_MODELS": "qwen3.5-omni-flash"
+      }
+    }
+  }
+}
