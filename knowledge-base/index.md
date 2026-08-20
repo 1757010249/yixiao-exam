@@ -128,6 +128,10 @@
 | 应急电源 | power-supply.md |
 | 末端切换 | power-supply.md |
 | 消防给水 | water-supply.md |
+| 防护等级 | water-supply.md, emergency-lighting.md, water-mist.md |
+| IP防护等级 | water-supply.md, emergency-lighting.md, water-mist.md |
+| 防水套管 | water-supply.md |
+| 控制柜 | water-supply.md, water-mist.md |
 | 火灾延续时间 | water-supply.md |
 | 消防水箱 | water-supply.md |
 | 消防水泵 | water-supply.md |
