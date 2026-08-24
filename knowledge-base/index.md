@@ -98,6 +98,9 @@
 | 粉尘爆炸 | fire-basics.md |
 | 爆炸极限 | fire-basics.md |
 | 防火分区 | fire-partition.md |
+| 住宅与非住宅合建 | fire-partition.md |
+| 商业服务网点分隔 | fire-partition.md |
+| 宿舍合建 | fire-partition.md |
 | 中庭 | fire-partition.md |
 | 防火分隔 | fire-separation.md |
 | 防火墙 | fire-separation.md |
@@ -135,10 +138,15 @@
 | 火灾延续时间 | water-supply.md |
 | 消防水箱 | water-supply.md |
 | 消防水泵 | water-supply.md |
+| 流量和压力测试装置 | water-supply.md |
+| 试水管排水 | water-supply.md |
 | 自动喷水灭火 | automatic-sprinkler.md |
 | 湿式/干式/预作用/雨淋 | automatic-sprinkler.md |
 | 喷头 | automatic-sprinkler.md |
 | 喷头布置 | automatic-sprinkler.md |
+| 仓库危险级 | automatic-sprinkler.md |
+| 水幕系统 | automatic-sprinkler.md |
+| 坡屋顶/屋脊喷头 | automatic-sprinkler.md |
 | 灭火器 | fire-extinguisher.md |
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
@@ -150,8 +158,12 @@
 | 法兰连接 | pipe-connection.md |
 | 沟槽连接 | pipe-connection.md |
 | 管径分界 | pipe-connection.md |
+| 气体灭火 | gas-extinguishing.md |
+| 储存装置铭牌（鸡鸭明日变凉皮） | gas-extinguishing.md |
+| 预制灭火装置数量辨析 | gas-extinguishing.md, dry-powder.md, water-mist.md |
 | 消防安全责任 | responsibility.md |
 | 消防安全重点单位 | responsibility.md |
+| 特殊建设工程（51号令14条） | responsibility.md |
 | 大型商业综合体 | commercial-complex.md |
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
 | 管理周期 | periods-summary.md |
