@@ -30,3 +30,8 @@ Thumbs.db
 
 # Claude Code 本地私有配置(含权限,不入库)
 .claude/settings.local.json
+
+# opencode-im-bridge 微信桥接本地凭证与运行数据(不入库)
+.env
+.opencode-lark/
+/data/

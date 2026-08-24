@@ -1,0 +1,22 @@
+{
+  // 飞书企业自建应用渠道（WebSocket 长连接，无需公网和 webhook 端口）
+  "feishu": {
+    "appId": "${FEISHU_APP_ID}",
+    "appSecret": "${FEISHU_APP_SECRET}"
+  },
+  // 微信 iLink/ClawBot 渠道（会话文件自动存于 .opencode-lark/wechat-session.json）
+  "wechat": {
+    "enabled": true
+  },
+  // SQLite 等运行数据目录
+  "dataDir": "./data",
+  // opencode server 兜底拉起：计划任务登录时已启动 serve，探测失败时才执行
+  "launcher": {
+    "enabled": true,
+    "autoStartServer": true,
+    "serverCommand": "opencode serve --port 4096",
+    "serverCwd": "C:\\1xiangmu\\yixiao",
+    "serverStartTimeoutMs": 30000,
+    "probeTimeoutMs": 4000
+  }
+}
