@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # vision-ocr-batch.py
-# 用 PyMuPDF 渲染 PDF 页 + qwen3.7-plus 视觉 OCR 重跑图片版 PDF
+# 用 PyMuPDF 渲染 PDF 页 + 视觉模型（zen 网关 mimo-v2.5，2026-08-25 起）重跑图片版 PDF
 # 用法: python tools/vision-ocr-batch.py <书名key> [起始页] [结束页]
 # 书名key: 3haoshu | 5haoshu | 6haoshu
 # 输出: tools/extracted-vision/<书名>.ocr.txt （含 ===== 第 N 页 ===== 分隔符）
@@ -30,15 +30,17 @@ BOOKS = {
 }
 
 def load_config():
-    cfg = json.load(open('C:/Users/30828/.claude.json', 'r', encoding='utf-8'))
-    for p in cfg.get('projects', {}):
-        m = cfg['projects'][p].get('mcpServers', {}).get('vision-bridge')
-        if m and m.get('env'): return m['env']
-    raise Exception('未找到 vision-bridge 配置')
+    env = {}
+    env['VISION_BRIDGE_BASE_URL'] = os.environ.get('VISION_BRIDGE_BASE_URL', 'https://opencode.ai/zen/go/v1')
+    env['VISION_BRIDGE_MODELS'] = os.environ.get('VISION_BRIDGE_MODELS', 'mimo-v2.5')
+    env['VISION_BRIDGE_API_KEY'] = os.environ.get('VISION_BRIDGE_API_KEY') or os.environ.get('VISION_BRIDGE_MCP_API_KEY')
+    if not env['VISION_BRIDGE_API_KEY']:
+        raise Exception('未找到视觉 API key（需设置 VISION_BRIDGE_API_KEY 或 VISION_BRIDGE_MCP_API_KEY 环境变量）')
+    return env
 
 ENV = load_config()
-BASE_URL = ENV.get('VISION_BRIDGE_BASE_URL', 'https://dashscope.aliyuncs.com/compatible-mode/v1')
-MODELS = [m for m in (ENV.get('VISION_BRIDGE_MODELS', 'qwen-vl-max')).split(',') if not re.search(r'realtime', m, re.I)]
+BASE_URL = ENV['VISION_BRIDGE_BASE_URL']
+MODELS = [m for m in ENV['VISION_BRIDGE_MODELS'].split(',') if not re.search(r'realtime', m, re.I)]
 API_KEY = ENV['VISION_BRIDGE_API_KEY']
 
 PROMPT = 'Extract ALL visible text verbatim. Preserve line breaks and structure. Output ONLY the text content, no commentary.'
