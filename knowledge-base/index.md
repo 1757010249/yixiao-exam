@@ -265,6 +265,6 @@
 | 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ✅ tools/extracted-vision/5号书消防综合能力内页-视觉版.ocr.txt（347/347） |
 | 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑（用户决定不重跑） |
 | 技术实务小项讲义 | 104 | ✅ 完成（文本型PDF，pdfjs直提） | tools/extracted/技术实务小项讲义-文本版.txt | —（文本层完好，无需视觉） |
-| 小红书横向总结 | 74 | ✅ 完成（文本型PDF，pdfjs直提；P10动压静压等粘连页待视觉复核） | tools/extracted/小红书-文本版.txt | ⏸ 视觉额度耗尽后补 |
+| 小红书横向总结 | 74 | ✅ 完成（文本型PDF，pdfjs直提；P10动压静压/P12喷放时间已视觉复核销项） | tools/extracted/小红书-文本版.txt | 🔶 抽页 tools/extracted-vision/小红书-视觉版.ocr.txt（2/74，粘连页复核） |
 | 小项习题 | 41 | — | — | ✅ tools/extracted-vision/小项习题-视觉版.ocr.txt（41/41，视觉重跑解决数字选项丢失） |
 | 电子卡42章经（xlsx） | 149卡 | ✅ 完成（结构化转换） | tools/extracted/电子卡42章经-全量.md | —（非图片） |
