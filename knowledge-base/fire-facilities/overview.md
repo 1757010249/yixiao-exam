@@ -18,6 +18,10 @@ related:
 
 # 消防设施 — 模块总览
 
+## 横向对比入口
+
+跨系统对比（启动方式/阀组/安装高度/抽检比例/验收缺陷判定/维护周期/通透率等）集中收录于 [cross-summary.md](fire-facilities/cross-summary.md)（小红书横向总结，2026-08-25入库）。
+
 ## 设施联动总览
 
 ```mermaid

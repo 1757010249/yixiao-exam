@@ -15,7 +15,7 @@ import { createHash } from 'crypto';
 const ROOT = 'C:/1xiangmu/yixiao';
 const OUT_DIR = path.join(ROOT, 'tools/extracted-vision');
 const TMP_DIR = path.join(os.tmpdir(), 'vocr');
-const PPM = 'C:/Users/1/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin/pdftoppm.exe';
+const PPM = 'C:/Users/30828/AppData/Local/poppler/poppler-25.07.0/Library/bin/pdftoppm.exe';
 const CONCURRENCY = 3; // 并发视觉调用数（火山豆包实测并发2最快，DashScope qwen为并发3，maas qwen3.5-omni 无限流迹象可到3）
 const DPI = 150;
 
@@ -27,13 +27,15 @@ const BOOKS = {
   'qimen10':  { pdf: 'materials/qimen-dunjia/2026齐德龙消防10-齐门遁甲横向.pdf', pages: 280, name: '2026齐德龙消防10-齐门遁甲横向' },
   'qimen11':  { pdf: 'materials/qimen-dunjia/2026齐德龙消防11-齐门遁甲竖向.pdf', pages: 392, name: '2026齐德龙消防11-齐门遁甲竖向' },
   'kapai':    { pdf: 'materials/qimen-dunjia/26卡牌大师.pdf', pages: 100, name: '26卡牌大师' },
+  'xxt':      { pdf: 'materials/exercises/小项习题.pdf', pages: 41, name: '小项习题-视觉版' },
+  'xhs':      { pdf: 'materials/qimen-dunjia/小红书.pdf', pages: 74, name: '小红书-视觉版' },
 };
 
 // ===== 读取 vision-bridge 配置（含 API key）=====
 function loadConfig() {
-  const cfg = JSON.parse(fs.readFileSync('C:/Users/1/.claude.json', 'utf8'));
+  const cfg = JSON.parse(fs.readFileSync('C:/Users/30828/.claude.json', 'utf8'));
   // 找 vision-bridge 配置（优先用小写键——当前 MCP 实际生效的火山引擎配置）
-  const keys = ['c:/1xiangmu/yixiao', 'C:/1xiangmu/yixiao', 'C:/Users/1'];
+  const keys = ['c:/1xiangmu/yixiao', 'C:/1xiangmu/yixiao', 'C:/Users/30828'];
   for (const k of keys) {
     const mcp = cfg.projects?.[k]?.mcpServers?.['vision-bridge'];
     if (mcp?.env) return mcp.env;

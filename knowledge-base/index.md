@@ -29,6 +29,15 @@
 | building-fire-protection/covered-pedestrian-street.md | 已完成 | 有顶棚的步行街（5.3.6条） |
 | building-fire-protection/special-places.md | 已完成 | 特殊场所（信息机房/数据中心+城市隧道，视觉重跑OCR新增） |
 | building-fire-protection/special-buildings.md | 已完成 | 特殊建筑考点汇总（锅炉/医疗/儿童/影院/老年人/歌舞/商业网点，竖向P50-58新增） |
+| building-fire-protection/clean-workshop.md | 已完成 | 洁净厂房防火（小项讲义第1节） |
+| building-fire-protection/ancient-buildings.md ⚑ | 已完成 | 古建筑防火（小项讲义第2节，消防点/分区/隔离带） |
+| building-fire-protection/utility-tunnel.md | 已完成 | 城市综合管廊防火（小项讲义第4节） |
+| building-fire-protection/civil-defense.md ⚑ | 已完成 | 人防工程防火（小项讲义第5节，下沉广场/避难走道） |
+| building-fire-protection/gas-station.md | 已完成 | 汽车加油加气站（小项讲义第6节，站级划分/合建禁令） |
+| building-fire-protection/fire-rescue-force.md | 已完成 | 灭火救援力量（小项讲义第7节，消防站分类/火警救援分级/微型站） |
+| building-fire-protection/petrochemical.md | 已完成 | 石油化工企业（小项讲义第8节，甲乙丙液体分类/风向布置） |
+| building-fire-protection/metro.md | 已完成 | 地铁防火（小项讲义第9节，耐火等级/商铺/联络通道） |
+| building-fire-protection/garage.md | 已完成 | 汽车库修车库停车场（小项讲义第10节，分类口诀/设施设置场所） |
 
 ### 消防设施
 
@@ -48,8 +57,9 @@
 | fire-facilities/fire-extinguisher.md | 已完成 | 灭火器 |
 | fire-facilities/dry-powder.md | 已完成 | 干粉灭火系统 |
 | fire-facilities/pipe-connection.md | 已完成 | 管道连接方式管径分界汇总（气干80/水50） |
-| fire-facilities/foam-extinguishing.md | 已完成 | 泡沫灭火系统（P177-179，视觉重跑OCR新增） |
+| fire-facilities/foam-extinguishing.md | 已完成 | 泡沫灭火系统（P177-179，视觉重跑OCR新增；小项讲义第11节补充机理/产生器/验收检测/闭式泡沫水喷淋） |
 | fire-facilities/electrical/power-supply.md | 已完成 | 消防供配电 |
+| fire-facilities/cross-summary.md ⚑ | 已完成 | 各系统横向对比总览（小红书74页：启动方式/安装高度/抽检比例/验收判定/通透率等24节） |
 
 ### 安全管理
 
@@ -67,6 +77,7 @@
 |---|---|---|
 | laws-regulations/overview.md | 已完成 | 模块概览 |
 | laws-regulations/penalties.md | 已完成 | 法律责任与处罚 |
+| laws-regulations/procedures.md | 已完成 | 消防监督管理程序（特殊建设工程审查/告知承诺/火灾认定复核，电子卡补录） |
 
 ## 按标签反向索引
 
@@ -200,6 +211,25 @@
 | 信息机房/数据中心 | special-places.md |
 | 城市隧道 | special-places.md |
 | 隧道排烟 | special-places.md |
+| 洁净厂房 | clean-workshop.md |
+| 古建筑/文物建筑 | ancient-buildings.md |
+| 综合管廊 | utility-tunnel.md |
+| 人防工程 | civil-defense.md |
+| 加油加气站/LPG/LNG/CNG | gas-station.md |
+| 石油化工/液化烃 | petrochemical.md |
+| 地铁防火 | metro.md |
+| 汽车库/修车库/停车场 | garage.md |
+| 消防站分类/辖区面积 | fire-rescue-force.md |
+| 火警分级/应急救援分级 | fire-rescue-force.md |
+| 乡镇消防队 | fire-rescue-force.md |
+| 横向对比（启动方式/安装高度等） | cross-summary.md |
+| 抽检百分比 | inspection.md, cross-summary.md |
+| 验收缺陷A/B/C判定 | cross-summary.md, foam-extinguishing.md |
+| 通透率/吊顶开孔 | cross-summary.md, smoke-control.md, alarm.md |
+| 充水时间 | cross-summary.md, automatic-sprinkler.md |
+| 声压级/dB | cross-summary.md, alarm.md |
+| 消防设计审查/告知承诺 | procedures.md |
+| 火灾事故认定复核 | procedures.md |
 
 ## 奇门遁甲来源条目
 
@@ -234,3 +264,7 @@
 | 3号书设施篇 | 447 | ✅ 完成 | tools/extracted/3号书设施篇.ocr.txt | ✅ tools/extracted-vision/3号书设施篇-视觉版.ocr.txt（447/447） |
 | 5号书综合能力 | 347 | ✅ 完成 | tools/extracted/5号书消防综合能力内页.ocr.txt | ✅ tools/extracted-vision/5号书消防综合能力内页-视觉版.ocr.txt（347/347） |
 | 6号综合习题 | 256 | ✅ 完成 | tools/extracted/6号综合习题.ocr.txt | ⏸ 未重跑（用户决定不重跑） |
+| 技术实务小项讲义 | 104 | ✅ 完成（文本型PDF，pdfjs直提） | tools/extracted/技术实务小项讲义-文本版.txt | —（文本层完好，无需视觉） |
+| 小红书横向总结 | 74 | ✅ 完成（文本型PDF，pdfjs直提；P10动压静压等粘连页待视觉复核） | tools/extracted/小红书-文本版.txt | ⏸ 视觉额度耗尽后补 |
+| 小项习题 | 41 | — | — | ✅ tools/extracted-vision/小项习题-视觉版.ocr.txt（41/41，视觉重跑解决数字选项丢失） |
+| 电子卡42章经（xlsx） | 149卡 | ✅ 完成（结构化转换） | tools/extracted/电子卡42章经-全量.md | —（非图片） |

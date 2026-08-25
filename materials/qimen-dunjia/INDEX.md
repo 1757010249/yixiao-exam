@@ -13,6 +13,10 @@
 | 竖版 | materials/qimen-dunjia/2026齐德龙消防11-齐门遁甲竖向.pdf | tools/extracted/2026齐德龙消防11-齐门遁甲竖向.ocr.txt |
 | 总结版 | materials/qimen-dunjia/奇门遁甲总结.pdf | tools/extracted/qimen-奇门遁甲总结.txt |
 | 卡牌大师 | materials/qimen-dunjia/26卡牌大师.pdf | tools/extracted/26卡牌大师.ocr.txt |
+| 小红书（横向总结集） | materials/qimen-dunjia/小红书.pdf | tools/extracted/小红书-文本版.txt |
+| 42章经电子卡（xlsx，149卡） | materials/qimen-dunjia/齐老师42章经记忆电子卡（加小项8.1.xlsx | tools/extracted/电子卡42章经-全量.md |
+
+> 2026-08-25 新增。小红书为跨系统横向对比总结集（74页），已结构化收录至 [[knowledge-base/fire-facilities/cross-summary.md]]。电子卡含防火篇39卡+设施篇48卡+综合篇29卡+小项13卡，经149卡逐卡比对完成查漏补录（报告见 SC-输出成果）。
 
 ## 口诀分组索引
 
