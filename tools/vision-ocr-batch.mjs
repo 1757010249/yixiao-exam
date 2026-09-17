@@ -1,6 +1,6 @@
 // vision-ocr-batch.mjs
 // 批量重跑图片版 PDF 的 OCR（视觉模型）
-// 模型: opencode zen 网关 mimo-v2.5（2026-08-25 起；原阿里云 MaaS qwen3-vl-flash 免费额度耗尽已弃用）
+// 模型: Command Code 网关 google/gemini-3.8-flash（2026-09-17 起；原 opencode zen 网关 mimo-v2.5 随订阅停用）
 // 用法: node tools/vision-ocr-batch.mjs <书名key> [起始页] [结束页]
 // 书名key: 1haoshu | 3haoshu | 5haoshu | 6haoshu | qimen10 | qimen11 | kapai
 // 输出: tools/extracted-vision/<书名>.ocr.txt （含 ===== 第 N 页 ===== 分隔符）
@@ -33,19 +33,19 @@ const BOOKS = {
 };
 
 // ===== 读取 vision-bridge 配置（含 API key）=====
-// 2026-08-25 起统一走 opencode zen 网关 + mimo-v2.5（阿里云 MaaS 免费额度已耗尽）。
+// 2026-09-17 起改走 Command Code 网关 + google/gemini-3.8-flash。
 // 读取顺序：环境变量 VISION_BRIDGE_BASE_URL / VISION_BRIDGE_MODELS / VISION_BRIDGE_API_KEY，
-// 其次用户级环境变量 VISION_BRIDGE_MCP_API_KEY（opencode.json 中 ${VISION_BRIDGE_MCP_API_KEY} 注入的同源 key）。
+// 其次用户级环境变量 CMD_API_KEY（全局 opencode.json 里 commandcode provider 用的同一个 key）。
 function loadConfig() {
   const env = {};
-  env.VISION_BRIDGE_BASE_URL = process.env.VISION_BRIDGE_BASE_URL || 'https://opencode.ai/zen/go/v1';
-  env.VISION_BRIDGE_MODELS = process.env.VISION_BRIDGE_MODELS || 'mimo-v2.5';
-  env.VISION_BRIDGE_API_KEY = process.env.VISION_BRIDGE_API_KEY || process.env.VISION_BRIDGE_MCP_API_KEY;
-  if (!env.VISION_BRIDGE_API_KEY) throw new Error('未找到视觉 API key（需设置 VISION_BRIDGE_API_KEY 或 VISION_BRIDGE_MCP_API_KEY 环境变量）');
+  env.VISION_BRIDGE_BASE_URL = process.env.VISION_BRIDGE_BASE_URL || 'https://api.commandcode.ai/provider/v1';
+  env.VISION_BRIDGE_MODELS = process.env.VISION_BRIDGE_MODELS || 'google/gemini-3.8-flash';
+  env.VISION_BRIDGE_API_KEY = process.env.CMD_API_KEY || process.env.VISION_BRIDGE_API_KEY;
+  if (!env.VISION_BRIDGE_API_KEY) throw new Error('未找到视觉 API key（需设置 CMD_API_KEY 环境变量）');
   return env;
 }
 
-// ===== 视觉模型调用（OpenAI 兼容，zen 网关 mimo-v2.5）=====
+// ===== 视觉模型调用（OpenAI 兼容，Command Code 网关 google/gemini-3.8-flash）=====
 async function callVision(dataUrl) {
   const env = loadConfig();
   const baseUrl = env.VISION_BRIDGE_BASE_URL;

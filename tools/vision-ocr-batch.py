@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # vision-ocr-batch.py
-# 用 PyMuPDF 渲染 PDF 页 + 视觉模型（zen 网关 mimo-v2.5，2026-08-25 起）重跑图片版 PDF
+# 用 PyMuPDF 渲染 PDF 页 + 视觉模型（Command Code 网关 google/gemini-3.8-flash，2026-09-17 起）重跑图片版 PDF
 # 用法: python tools/vision-ocr-batch.py <书名key> [起始页] [结束页]
 # 书名key: 3haoshu | 5haoshu | 6haoshu
 # 输出: tools/extracted-vision/<书名>.ocr.txt （含 ===== 第 N 页 ===== 分隔符）
@@ -31,11 +31,11 @@ BOOKS = {
 
 def load_config():
     env = {}
-    env['VISION_BRIDGE_BASE_URL'] = os.environ.get('VISION_BRIDGE_BASE_URL', 'https://opencode.ai/zen/go/v1')
-    env['VISION_BRIDGE_MODELS'] = os.environ.get('VISION_BRIDGE_MODELS', 'mimo-v2.5')
-    env['VISION_BRIDGE_API_KEY'] = os.environ.get('VISION_BRIDGE_API_KEY') or os.environ.get('VISION_BRIDGE_MCP_API_KEY')
+    env['VISION_BRIDGE_BASE_URL'] = os.environ.get('VISION_BRIDGE_BASE_URL', 'https://api.commandcode.ai/provider/v1')
+    env['VISION_BRIDGE_MODELS'] = os.environ.get('VISION_BRIDGE_MODELS', 'google/gemini-3.8-flash')
+    env['VISION_BRIDGE_API_KEY'] = os.environ.get('CMD_API_KEY') or os.environ.get('VISION_BRIDGE_API_KEY')
     if not env['VISION_BRIDGE_API_KEY']:
-        raise Exception('未找到视觉 API key（需设置 VISION_BRIDGE_API_KEY 或 VISION_BRIDGE_MCP_API_KEY 环境变量）')
+        raise Exception('未找到视觉 API key（需设置 CMD_API_KEY 环境变量）')
     return env
 
 ENV = load_config()
