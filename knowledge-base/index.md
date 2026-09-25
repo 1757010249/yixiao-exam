@@ -77,7 +77,7 @@
 |---|---|---|
 | laws-regulations/overview.md | 已完成 | 模块概览 |
 | laws-regulations/penalties.md | 已完成 | 法律责任与处罚 |
-| laws-regulations/procedures.md | 已完成 | 消防监督管理程序（特殊建设工程审查/告知承诺/火灾认定复核，电子卡补录） |
+| laws-regulations/procedures.md | 已完成 | 消防监督管理程序（特殊建设工程审查/告知承诺/火灾认定复核/公众聚集场所申报材料，电子卡补录+口诀补录） |
 
 ## 按标签反向索引
 
@@ -100,6 +100,7 @@
 | 安全疏散 | evacuation.md |
 | 避难层 | evacuation.md |
 | 疏散楼梯 | evacuation.md |
+| 住宅户门净宽 | evacuation.md |
 | 火灾基础知识 | fire-basics.md |
 | 燃烧 | fire-basics.md |
 | 火灾分类 | fire-basics.md |
@@ -162,6 +163,9 @@
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
 | 火灾自动报警 | alarm.md |
+| 线路敷设 | alarm.md |
+| 金可明封 | alarm.md |
+| 金可彼岸 | alarm.md |
 | 应急照明 | emergency-lighting.md |
 | 防排烟 | smoke-control.md |
 | 管道连接 | pipe-connection.md |
@@ -229,6 +233,7 @@
 | 充水时间 | cross-summary.md, automatic-sprinkler.md |
 | 声压级/dB | cross-summary.md, alarm.md |
 | 消防设计审查/告知承诺 | procedures.md |
+| 公众聚集场所申报材料（赵信监督安其拉） | procedures.md |
 | 火灾事故认定复核 | procedures.md |
 
 ## 奇门遁甲来源条目

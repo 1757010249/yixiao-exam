@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竖井耐火极限 · 防爆墙/防火墙/防火隔墙 速查卡（2026-09-09）</title>
+<style>
+  :root {
+    --ink: #2b2f36;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --blue: #1d4ed8;
+    --blue-soft: #eff4ff;
+    --orange: #b45309;
+    --orange-soft: #fff7ed;
+    --green: #15803d;
+    --green-soft: #f0fdf4;
+    --red: #b91c1c;
+    --red-soft: #fef2f2;
+    --gray-soft: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.top {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    color: #fff;
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+  }
+  header.top h1 { margin: 0 0 6px; font-size: 24px; letter-spacing: 1px; }
+  header.top p { margin: 0; opacity: .85; font-size: 13.5px; }
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  nav.toc a { color: var(--blue); text-decoration: none; margin-right: 18px; }
+  nav.toc a:hover { text-decoration: underline; }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 0 0 4px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--blue);
+  }
+  h3 { font-size: 16px; margin: 26px 0 10px; color: var(--blue); }
+  h3:first-of-type { margin-top: 18px; }
+  .conclusion {
+    background: var(--blue-soft);
+    border-left: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  .conclusion b { color: var(--blue); }
+  .mnemonic {
+    background: var(--orange-soft);
+    border-left: 4px solid var(--orange);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-weight: 600;
+  }
+  .mnemonic small { display: block; font-weight: 400; color: var(--ink); margin-top: 6px; }
+  .warn {
+    background: var(--red-soft);
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 16px 0;
+  }
+  .ok {
+    background: var(--green-soft);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 16px 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--gray-soft); font-weight: 700; white-space: nowrap; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  td.hl { color: var(--blue); font-weight: 700; }
+  ul, ol { margin: 10px 0; padding-left: 24px; }
+  li { margin: 5px 0; }
+  .src { font-size: 13px; color: var(--muted); }
+  .src code {
+    background: var(--gray-soft);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+  }
+  .divider { text-align:center; color: var(--muted); font-size: 13px; margin: 40px 0 10px; letter-spacing: 4px; }
+  @media print {
+    body { background: #fff; }
+    section.card { border: none; padding: 10px 0; }
+    header.top { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>竖井耐火极限 · 三堵墙选型 速查卡</h1>
+  <p>一级消防工程师备考 · 易混淆知识点总结 · 2026-09-09</p>
+</header>
+
+<nav class="toc">
+  <a href="#part1">一、竖井耐火极限（1h vs 2h）</a>
+  <a href="#part2">二、防爆墙 / 防火墙 / 防火隔墙</a>
+  <a href="#part3">三、附：什么能划分防火分区</a>
+</nav>
+
+<!-- ================= PART 1 ================= -->
+<section class="card" id="part1">
+  <h2>一、竖井耐火极限：为什么有时 1h、有时 2h</h2>
+
+  <div class="conclusion">
+    <b>结论钉死：</b>竖井不是"同一个井壁有时 1h 有时 2h"，而是<b>井分两类</b>——凡是井里<b>走人</b>（电梯，含消防电梯）的，井壁一律按疏散构件给 <b>2h</b>；凡是井里走<b>线缆/管道/烟气</b>的，井壁给 <b>1h</b>。错的三道题正好是三个不同部位，混在一起就乱了。
+  </div>
+
+  <h3>1. 竖井"井壁/隔墙"耐火极限总表</h3>
+  <table>
+    <tr><th>部位</th><th>耐火极限</th><th>依据</th></tr>
+    <tr><td>电梯井井壁（普通电梯）</td><td class="hl">2.0h</td><td>GB 50016-2014 表5.1.2 + 第6.2.9条（一、二级耐火；三级1.5h，构件表内行）</td></tr>
+    <tr><td>电梯层门（耐火完整性）</td><td class="hl">2.0h</td><td>GB 50016-2014 第6.2.9条</td></tr>
+    <tr><td>消防电梯井、机房 与相邻电梯井/机房之间</td><td class="hl">2.0h 无洞口防火隔墙</td><td>GB 50016-2014 第7.3.5条</td></tr>
+    <tr><td>电缆井、电气竖井、管道井、排烟道、排气道、垃圾道 井壁</td><td class="hl">≥1.0h</td><td>GB 50016-2014 第6.2.9条</td></tr>
+    <tr><td>送风/排烟管道井的隔墙</td><td class="hl">≥1.0h，检修门乙级</td><td>GB 51251-2017，讲义P396-399</td></tr>
+    <tr><td>洁净厂房技术竖井</td><td class="hl">≥1h，检查门≥0.6h</td><td>GB 50073，讲义"小项"P69</td></tr>
+    <tr><td>避难层：管道井/设备间与避难区之间</td><td class="hl">2.0h 防火隔墙</td><td>GB 50016-2014 第5.5.23条（设备管道区与避难区是 3.0h）</td></tr>
+  </table>
+
+  <h3>2. 为什么这样定（理解后不用背）</h3>
+  <p><b>电梯井给 2h —— 三个理由叠加：</b></p>
+  <ol>
+    <li>电梯井是<b>通高不封堵</b>的竖向开口（轿厢要上下跑，层门逐层开），一旦起火就是全楼<b>烟囱效应主通道</b>，各层都开口，必须靠井壁自己扛；</li>
+    <li>它是<b>人/救援的垂直通道</b>，不是管线通道——构件表里"电梯井的墙"和"楼梯间、前室的墙"是同一行、同为 2.0h，把它当"立起来的疏散构件"记，永远不会掉到 1h；</li>
+    <li>消防电梯井要单独再加 2.0h 无洞口隔墙（第7.3.5条），是为了火灾时<b>救援梯井不被普通梯井连累</b>。</li>
+  </ol>
+  <p><b>管线竖井给 1h —— 恰好相反：</b></p>
+  <ol>
+    <li>井里是电缆/管道，没有"人持续停留、需要保命"的问题；</li>
+    <li>规范靠<b>每层楼板处封堵</b>（封堵组件耐火≥楼板耐火性能，GB 50016 第6.2.9条）把整井层层打断，火灾爬不上去，井壁只需 1h 挡住侧面火；</li>
+    <li>反过来验证：允许<b>层间不封堵</b>的竖井（通风、送/排烟管道井、燃气竖井等）属于例外，它们的<b>检修门升级为乙级</b>来补短板——"1h 井壁 + 层间封堵/乙级门"是一套完整逻辑。</li>
+  </ol>
+
+  <h3>3. 检查门等级是另一条线，别跟 1h/2h 混</h3>
+  <p>井壁耐火（1h）≠ 检查门等级（甲/乙/丙），门按风险升级定。口诀：<b>"上天入地甲级门"</b></p>
+  <table>
+    <tr><th>情况</th><th>检查门等级</th></tr>
+    <tr><td>普通建筑常规电缆井/管道井</td><td><b>丙级</b>（错题39：选C）</td></tr>
+    <tr><td>层间无水平防火分隔的竖井、住宅合用前室</td><td><b>乙级</b></td></tr>
+    <tr><td>埋深&gt;10m 的地下建筑（入地）、建筑高度&gt;100m（上天）</td><td><b>甲级</b></td></tr>
+  </table>
+
+  <h3>4. 直接对上错过的三道题</h3>
+  <table>
+    <tr><th>错题</th><th>考点部位</th><th>答案</th></tr>
+    <tr><td>题89 电气竖井、管道井<b>井壁</b>耐火极限</td><td>管线井本体</td><td class="hl">1.0h（B）</td></tr>
+    <tr><td>题37 消防电梯井<b>与相邻电梯井之间</b>防火隔墙</td><td>救援通道隔离</td><td class="hl">2.0h（C）</td></tr>
+    <tr><td>题39 电缆井井壁<b>检查门</b></td><td>门是另一维度</td><td class="hl">丙级（C）</td></tr>
+  </table>
+  <div class="ok">三者根本不冲突：先问一句"这题问的是<b>井壁本身</b>、<b>井间隔墙</b>还是<b>检查门</b>"，再套表就不会错。</div>
+
+  <h3>溯源</h3>
+  <p class="src">讲义1号书 P153（防火篇OCR:5768-5790）+ 知识库：<br>
+  <code>building-plane.md:120-146</code>（消防电梯井2h隔墙、检查门分级、避难区井道）<br>
+  <code>fire-separation.md:133-156</code>（竖井检查门6.2.9、电梯层门2h）<br>
+  <code>fire-resistance.md:68</code>（电梯井墙构件表）<br>
+  <code>smoke-control.md:147-148</code>（防排烟管道井隔墙1h+乙级门）</p>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="card" id="part2">
+  <h2>二、总平面布置：防爆墙 / 防火墙 / 防火隔墙</h2>
+
+  <div class="conclusion">
+    <b>结论：</b>三堵墙根本不是同一类东西，分清<b>"防的是什么、谁和谁之间分"</b>。<br>
+    <b>防爆墙</b>：防爆炸冲击波（只用在有爆炸危险的甲乙类厂房、燃气房间等贴邻场景）；<br>
+    <b>防火墙</b>：防火灾在<b>防火分区之间</b>蔓延（必为 3.00h，甲乙丙类仓库内 4.00h），等级最高、最严格；<br>
+    <b>防火隔墙</b>：只是防火分区内的房间-房间/区域-区域分隔，耐火极限按部位功能定（1h/2h/3h 都有），<b>不能划防火分区</b>。
+  </div>
+
+  <h3>1. 选墙决策树</h3>
+  <table>
+    <tr><th>你在分谁？</th><th>选哪堵墙</th><th>依据</th></tr>
+    <tr><td>建筑之间贴临共用墙，且一侧是民用建筑</td><td class="hl">防火墙（2.00h / 3.00h，按场景）</td><td>锅炉房贴临民用、液化石油气贴临民用、飞机库与喷漆机库贴临等</td></tr>
+    <tr><td>建筑之间贴临共用墙，且涉及甲乙类厂房（爆炸危险）</td><td class="hl">防爆墙或防火墙（视场合）</td><td>办公室/休息室贴临甲乙类厂房用防爆墙；变配电站贴临时用防火墙或防爆墙</td></tr>
+    <tr><td>防火分区之间</td><td class="hl">防火墙（不可替代）</td><td>民用、工业均必须；甲类厂房/仓库不能用水幕/卷帘替代</td></tr>
+    <tr><td>防火分区内的房间之间、区域之间、设备用房之间</td><td class="hl">防火隔墙（按部位定等级）</td><td>锅炉房、储油间、设备机房、辅助办公区、歌舞娱乐厅、避难区/设备管道区等</td></tr>
+    <tr><td>总平面上两座建筑防火间距不足</td><td class="hl">把外墙改造为防火墙或设独立室外防火墙</td><td>GB 50016-2014 第3.4.5条（厂房间距减免）</td></tr>
+  </table>
+
+  <h3>2. 三堵墙硬性对照</h3>
+  <table>
+    <tr><th>维度</th><th>防爆墙</th><th>防火墙</th><th>防火隔墙</th></tr>
+    <tr><td><b>防的对象</b></td><td>爆炸冲击波</td><td>火灾蔓延（3.00h）</td><td>火灾蔓延（按部位 1h/2h/3h）</td></tr>
+    <tr><td><b>耐火极限</b></td><td>规范未给统一耐火值，强调构造抗冲击</td><td>一般 <b>3.00h</b>；甲乙类厂房、甲乙丙类仓库内 <b>4.00h</b></td><td>按部位定：1h/2h/3h</td></tr>
+    <tr><td><b>构造特征</b></td><td>砖墙≥240mm + M5 + 构造柱 / 钢筋混凝土墙≥200mm 双面配筋 C20 / 钢板墙</td><td>必须直接设基础或框架梁，<b>高出屋面≥0.5m</b>，内转角门窗洞口水平距离≥4m，从楼地面基层隔断至梁/楼板/屋面板底面</td><td>满足所在部位耐火极限即可，可不开到基础</td></tr>
+    <tr><td><b>能开洞吗</b></td><td>不开</td><td><b>严禁穿可燃气体和甲乙丙类液体管道</b>；确需开门窗只能开不可开启或自动关闭的<b>甲级</b>防火门/窗，且不应设置排气道</td><td>可按部位开甲/乙级防火门窗</td></tr>
+    <tr><td><b>典型条文</b></td><td>GB 50016-2014 第3.6节（厂房防爆）</td><td>第6.1节（防火墙构造）、表5.1.2、第3.4.5条（总平面间距减免）</td><td>第6.2.7条（设备用房）、第6.2.9条（竖井）等</td></tr>
+  </table>
+
+  <h3>3. 总平面典型场景速查</h3>
+  <table>
+    <tr><th>场景</th><th>选哪堵墙</th><th>备注</th></tr>
+    <tr><td>锅炉房贴临民用建筑</td><td class="hl">防火墙</td><td>耐火等级≥二级</td></tr>
+    <tr><td>办公室/休息室贴临甲乙类厂房</td><td class="hl">防爆墙</td><td>＋独立安全出口</td></tr>
+    <tr><td>分控制室贴临甲乙类厂房</td><td class="hl">3.00h 防火隔墙</td><td>不是防爆墙也不是防火墙</td></tr>
+    <tr><td>甲乙类厂房专用 10kV 变配电站贴临</td><td class="hl">防火墙或防爆墙</td><td>—</td></tr>
+    <tr><td>液化石油气贴临民用</td><td class="hl">防火墙</td><td>且不应贴临高层/住宅/人密</td></tr>
+    <tr><td>总平面相邻外墙设为防火墙</td><td class="hl">防火间距可减小甚至不限</td><td>甲类厂房之间仍≥4m</td></tr>
+    <tr><td>甲乙类厂房和甲乙丙类仓库内部防火墙</td><td class="hl">4.00h</td><td>其余防火墙 3.00h</td></tr>
+  </table>
+
+  <h3>4. 易错点（避开三个坑）</h3>
+  <ul>
+    <li><b>防火隔墙不能划防火分区</b>——划防火分区只能用防火墙，甲类厂房/仓库禁止用防火卷帘/水幕替代；</li>
+    <li><b>防爆墙 ≠ 防火墙</b>：防爆墙看构造与抗冲击，规范不给耐火值；防火墙是耐火 3.00h 的"贵族"，高出屋面、独立承重；</li>
+    <li><b>总平面贴临共用墙</b>：是否涉及爆炸危险决定走"防爆墙线"还是"防火墙线"——同样是贴临民用，甲乙类厂房的办公用<b>防爆墙</b>，锅炉房用<b>防火墙</b>，别记反。</li>
+  </ul>
+
+  <div class="mnemonic">口诀："防火分区用防火墙，贴临甲乙防爆墙，房间设备隔墙兜。"
+    <small>跨分区 → 防火墙（最严）；跨爆炸危险场所贴临 → 防爆墙（抗冲击）；防火分区内的房间/设备 → 防火隔墙（按部位定等级）。</small>
+  </div>
+
+  <h3>溯源</h3>
+  <p class="src">
+  <code>fire-separation.md:53-63</code>（GB 50016-2014 第6.1节 防火墙构造）<br>
+  <code>explosion-prevention.md:153-159</code>（防爆墙构造）<br>
+  <code>fire-partition.md:32-33</code>（防火分区之间必须防火墙）<br>
+  <code>building-plane.md:240-248</code>（贴临要求汇总）<br>
+  <code>site-layout.md:99-103</code>（总平面防火墙减间距）<br>
+  <code>fire-resistance.md:88</code>（甲乙丙类仓库防火墙 4.00h，讲义 1号书 P137附近）</p>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="card" id="part3">
+  <h2>三、附：什么东西可以划分防火分区</h2>
+
+  <div class="conclusion">
+    <b>一句话：</b>水平方向靠<b>"防火墙"</b>（确有困难用防火卷帘/防火分隔水幕替代），竖直方向靠<b>"楼板"</b>。就这四样，其他都不行。
+  </div>
+
+  <h3>白名单（能划分防火分区）</h3>
+  <table>
+    <tr><th>构件</th><th>角色</th><th>限制</th></tr>
+    <tr><td class="hl">防火墙</td><td>水平划分防火分区的主要构件（3.00h；甲乙类厂房、甲乙丙类仓库内 4.00h）</td><td>无替代限制时的首选</td></tr>
+    <tr><td class="hl">楼板</td><td>竖向划分防火分区（上、下层之间）</td><td>防火分区定义原文包含"防火墙、楼板及其他防火分隔设施"</td></tr>
+    <tr><td class="hl">防火卷帘</td><td>防火墙确有困难时的替代</td><td>甲类厂房、仓库的防火分区之间<b>禁止</b>替代</td></tr>
+    <tr><td class="hl">防火分隔水幕</td><td>同上替代</td><td>同上，甲类厂房/仓库<b>禁止</b></td></tr>
+  </table>
+
+  <h3>黑名单（不能划分防火分区）</h3>
+  <table>
+    <tr><th>构件</th><th>为什么不行</th></tr>
+    <tr><td>防火隔墙</td><td>只能分隔防火分区内的房间、区域、设备用房；等级不够、构造也弱</td></tr>
+    <tr><td>挡烟垂壁、防烟隔墙、结构梁</td><td>这些是划分<b>防烟分区</b>的（≤500㎡、不跨越防火分区），别和防火分区串</td></tr>
+    <tr><td>防火门/防火窗</td><td>只是防火墙/隔墙开口上的配件，自身不是分隔构件</td></tr>
+    <tr><td>防火卷帘/水幕（甲类厂房、仓库场景）</td><td>强制性禁止替代，必须防火墙</td></tr>
+  </table>
+
+  <div class="mnemonic">记忆锚："横墙竖板，帘幕替补，甲仓不许。"
+    <small>横向=防火墙、竖向=楼板；卷帘+分隔水幕=替补队员；甲类厂房和仓库=必须防火墙上场，替补不许上。</small>
+  </div>
+
+  <h3>三个高频考法</h3>
+  <ol>
+    <li>判断题"防火隔墙可划分防火分区" → <b>错</b>（只能分房间）；</li>
+    <li>判断题"仓库防火分区之间可采用防火卷帘" → <b>错</b>（必须防火墙）；</li>
+    <li>甲类厂房防火分区之间用什么 → <b>只能防火墙</b>，卷帘/水幕都不行。</li>
+  </ol>
+
+  <p class="src">溯源：<code>fire-partition.md:29-35</code>（定义与划分手段）、<code>fire-partition.md:95</code>（仓库必须防火墙）、<code>smoke-control.md:68</code>（防烟分区对比）、<code>fire-resistance.md:56-88</code>（防火墙耐火 3h/4h）</p>
+</section>
+
+<p class="divider">· · · 完 · · ·</p>
+
+</div>
+</body>
+</html>
