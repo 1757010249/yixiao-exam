@@ -159,6 +159,7 @@
 | 仓库危险级 | automatic-sprinkler.md |
 | 水幕系统 | automatic-sprinkler.md |
 | 坡屋顶/屋脊喷头 | automatic-sprinkler.md |
+| 末端试水 | automatic-sprinkler.md |
 | 灭火器 | fire-extinguisher.md |
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
