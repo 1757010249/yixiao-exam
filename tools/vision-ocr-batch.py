@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # vision-ocr-batch.py
-# 用 PyMuPDF 渲染 PDF 页 + 视觉模型（Command Code 网关 google/gemini-3.8-flash，2026-09-17 起）重跑图片版 PDF
+# 用 PyMuPDF 渲染 PDF 页 + 视觉模型（opencode-go 网关 mimo-v2.5，2026-10-17 起）重跑图片版 PDF
 # 用法: python tools/vision-ocr-batch.py <书名key> [起始页] [结束页]
 # 书名key: 3haoshu | 5haoshu | 6haoshu
 # 输出: tools/extracted-vision/<书名>.ocr.txt （含 ===== 第 N 页 ===== 分隔符）
@@ -8,7 +8,7 @@
 # 断点续跑: 检查输出文件已有的页号，跳过已完成页
 # 中止保护: 连续 5 次 HTTP 403/429/超时 即中止（额度耗尽），下次续跑
 
-import sys, os, json, hashlib, base64, re, time, threading, urllib.request, urllib.error
+import sys, os, json, hashlib, base64, re, time, threading, uuid, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 try:
@@ -29,19 +29,29 @@ BOOKS = {
     '6haoshu': {'pdf': 'materials/exercises/6号综合习题.pdf', 'pages': 256, 'name': '6号综合习题'},
 }
 
+def _read_opencode_go_key():
+    """从 opencode 的 auth.json 读 opencode-go key（~/.local/share/opencode/auth.json）"""
+    try:
+        p = os.path.join(os.path.expanduser('~'), '.local/share/opencode/auth.json')
+        with open(p, encoding='utf-8') as f:
+            return (json.load(f).get('opencode-go') or {}).get('key')
+    except Exception:
+        return None
+
 def load_config():
     env = {}
-    env['VISION_BRIDGE_BASE_URL'] = os.environ.get('VISION_BRIDGE_BASE_URL', 'https://api.commandcode.ai/provider/v1')
-    env['VISION_BRIDGE_MODELS'] = os.environ.get('VISION_BRIDGE_MODELS', 'google/gemini-3.8-flash')
-    env['VISION_BRIDGE_API_KEY'] = os.environ.get('CMD_API_KEY') or os.environ.get('VISION_BRIDGE_API_KEY')
+    env['VISION_BRIDGE_BASE_URL'] = os.environ.get('VISION_BRIDGE_BASE_URL', 'https://opencode.ai/inference/go/openai/v1')
+    env['VISION_BRIDGE_MODELS'] = os.environ.get('VISION_BRIDGE_MODELS', 'mimo-v2.5')
+    env['VISION_BRIDGE_API_KEY'] = os.environ.get('VISION_BRIDGE_API_KEY') or _read_opencode_go_key()
     if not env['VISION_BRIDGE_API_KEY']:
-        raise Exception('未找到视觉 API key（需设置 CMD_API_KEY 环境变量）')
+        raise Exception('未找到视觉 API key（设置 VISION_BRIDGE_API_KEY，或先 /connect 登录 opencode-go）')
     return env
 
 ENV = load_config()
 BASE_URL = ENV['VISION_BRIDGE_BASE_URL']
 MODELS = [m for m in ENV['VISION_BRIDGE_MODELS'].split(',') if not re.search(r'realtime', m, re.I)]
 API_KEY = ENV['VISION_BRIDGE_API_KEY']
+SESSION_ID = str(uuid.uuid4())  # Go 网关用于路由与缓存优化，进程内稳定
 
 PROMPT = 'Extract ALL visible text verbatim. Preserve line breaks and structure. Output ONLY the text content, no commentary.'
 
@@ -89,7 +99,8 @@ def call_vision(png_bytes):
         payload = body.replace('"model": null', f'"model": "{model}"')
         try:
             req = urllib.request.Request(BASE_URL + '/chat/completions', data=payload.encode('utf-8'),
-                                         headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {API_KEY}'})
+                                         headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {API_KEY}',
+                                                  'User-Agent': 'yixiao-vision/1.0', 'x-opencode-session': SESSION_ID})
             with urllib.request.urlopen(req, timeout=180) as resp:
                 data = json.loads(resp.read().decode('utf-8'))
                 text = (data.get('choices', [{}])[0].get('message', {}).get('content') or '').strip()

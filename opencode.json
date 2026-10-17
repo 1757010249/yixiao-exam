@@ -4,20 +4,7 @@
   "instructions": [
     "AGENTS.md"
   ],
-  "plugin": [
+  "plugins": [
     "opencode-supermemory@latest"
-  ],
-  "provider": {
-    "commandcode": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Command Code",
-      "options": {
-        "apiKey": "{env:CMD_API_KEY}",
-        "baseURL": "https://api.commandcode.ai/provider/v1"
-      },
-      "models": {
-        "xiaomi/mimo-v2.5-pro": {}
-      }
-    }
-  }
+  ]
 }

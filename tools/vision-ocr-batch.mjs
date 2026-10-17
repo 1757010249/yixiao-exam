@@ -1,6 +1,6 @@
 // vision-ocr-batch.mjs
 // 批量重跑图片版 PDF 的 OCR（视觉模型）
-// 模型: Command Code 网关 google/gemini-3.8-flash（2026-09-17 起；原 opencode zen 网关 mimo-v2.5 随订阅停用）
+// 模型: opencode-go 网关 mimo-v2.5（2026-10-17 起；Command Code 订阅到期已停用）
 // 用法: node tools/vision-ocr-batch.mjs <书名key> [起始页] [结束页]
 // 书名key: 1haoshu | 3haoshu | 5haoshu | 6haoshu | qimen10 | qimen11 | kapai
 // 输出: tools/extracted-vision/<书名>.ocr.txt （含 ===== 第 N 页 ===== 分隔符）
@@ -10,7 +10,7 @@ import { spawnSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import { createHash } from 'crypto';
+import { createHash, randomUUID } from 'crypto';
 
 // ===== 配置 =====
 const ROOT = 'C:/1xiangmu/yixiao';
@@ -32,20 +32,31 @@ const BOOKS = {
   'xhs':      { pdf: 'materials/qimen-dunjia/小红书.pdf', pages: 74, name: '小红书-视觉版' },
 };
 
-// ===== 读取 vision-bridge 配置（含 API key）=====
-// 2026-09-17 起改走 Command Code 网关 + google/gemini-3.8-flash。
+// ===== 读取视觉网关配置（含 API key）=====
+// 2026-10-17 起改回 opencode-go 网关 + mimo-v2.5（Command Code 订阅到期）。
 // 读取顺序：环境变量 VISION_BRIDGE_BASE_URL / VISION_BRIDGE_MODELS / VISION_BRIDGE_API_KEY，
-// 其次用户级环境变量 CMD_API_KEY（全局 opencode.json 里 commandcode provider 用的同一个 key）。
+// 其次读 opencode auth.json 里 opencode-go 的 key（/connect 登录时写入）。
 function loadConfig() {
   const env = {};
-  env.VISION_BRIDGE_BASE_URL = process.env.VISION_BRIDGE_BASE_URL || 'https://api.commandcode.ai/provider/v1';
-  env.VISION_BRIDGE_MODELS = process.env.VISION_BRIDGE_MODELS || 'google/gemini-3.8-flash';
-  env.VISION_BRIDGE_API_KEY = process.env.CMD_API_KEY || process.env.VISION_BRIDGE_API_KEY;
-  if (!env.VISION_BRIDGE_API_KEY) throw new Error('未找到视觉 API key（需设置 CMD_API_KEY 环境变量）');
+  env.VISION_BRIDGE_BASE_URL = process.env.VISION_BRIDGE_BASE_URL || 'https://opencode.ai/inference/go/openai/v1';
+  env.VISION_BRIDGE_MODELS = process.env.VISION_BRIDGE_MODELS || 'mimo-v2.5';
+  env.VISION_BRIDGE_API_KEY = process.env.VISION_BRIDGE_API_KEY || readOpencodeGoKey();
+  if (!env.VISION_BRIDGE_API_KEY) throw new Error('未找到视觉 API key（设置 VISION_BRIDGE_API_KEY，或先 /connect 登录 opencode-go）');
   return env;
 }
 
-// ===== 视觉模型调用（OpenAI 兼容，Command Code 网关 google/gemini-3.8-flash）=====
+// 从 opencode 的 auth.json 读 opencode-go key（~/.local/share/opencode/auth.json）
+function readOpencodeGoKey() {
+  try {
+    const auth = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.local/share/opencode/auth.json'), 'utf8'));
+    return auth['opencode-go']?.key || null;
+  } catch { return null; }
+}
+
+// 本进程内稳定的会话 ID（Go 网关用于路由与缓存优化）
+const SESSION_ID = randomUUID();
+
+// ===== 视觉模型调用（OpenAI 兼容，opencode-go 网关 mimo-v2.5）=====
 async function callVision(dataUrl) {
   const env = loadConfig();
   const baseUrl = env.VISION_BRIDGE_BASE_URL;
@@ -59,7 +70,12 @@ async function callVision(dataUrl) {
     try {
       const resp = await fetch(`${baseUrl}/chat/completions`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+          'User-Agent': 'yixiao-vision/1.0',
+          'x-opencode-session': SESSION_ID,
+        },
         body: JSON.stringify({
           model,
           temperature: 0.2,
