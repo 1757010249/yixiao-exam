@@ -50,6 +50,7 @@
 | fire-facilities/water/water-supply.md ⚑ | 已完成 | 消防给水+消防水泵+消防水箱 |
 | fire-facilities/electrical/alarm.md ⚑ | 已完成 | 火灾自动报警系统 |
 | fire-facilities/electrical/emergency-lighting.md ⚑ | 已完成 | 应急照明与疏散指示 |
+| fire-facilities/electrical/wire-slack.md | 已完成 | 报警系统导线/线缆余量汇总（施工安装 150/200mm、光纤8m） |
 | fire-facilities/hvac/smoke-control.md ⚑ | 已完成 | 防排烟系统 |
 | fire-facilities/gas-extinguishing.md ⚑ | 已完成 | 气体灭火系统（七氟丙烷/IG541/CO2） |
 | fire-facilities/water/water-mist.md ⚑ | 已完成 | 水喷雾与细水雾 |
@@ -164,6 +165,9 @@
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
 | 火灾自动报警 | alarm.md |
+| 导线余量 | wire-slack.md |
+| 线缆余量 | wire-slack.md |
+| 施工及验收 | wire-slack.md |
 | 线路敷设 | alarm.md |
 | 金可明封 | alarm.md |
 | 金可彼岸 | alarm.md |
