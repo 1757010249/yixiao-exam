@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数字对比记忆 · 报警控制器 / 气体 / 细水雾防护区</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1f2430; --muted:#6b7280;
+    --line:#e3e6eb; --head:#2b3a55; --accent:#c0392b; --ok:#1e7d46;
+    --warn:#b7791f; --band:#eef2f8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:28px 16px 60px; background:var(--bg); color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Segoe UI",Arial,sans-serif;
+    line-height:1.65; font-size:15px;
+  }
+  .wrap{max-width:960px; margin:0 auto;}
+  h1{font-size:22px; margin:0 0 4px; color:var(--head);}
+  .sub{color:var(--muted); font-size:13px; margin-bottom:22px;}
+  h2{font-size:17px; margin:30px 0 10px; padding-left:10px; border-left:4px solid var(--head); color:var(--head);}
+  h3{font-size:15px; margin:18px 0 8px; color:var(--head);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:16px; box-shadow:0 1px 2px rgba(0,0,0,.03);}
+  table{width:100%; border-collapse:collapse; margin:8px 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--band); color:var(--head); font-weight:600; white-space:nowrap;}
+  td.num{font-weight:700; color:var(--accent); white-space:nowrap;}
+  td.num-ok{font-weight:700; color:var(--ok); white-space:nowrap;}
+  .tag{display:inline-block; font-size:12px; padding:1px 8px; border-radius:10px; font-weight:600;}
+  .tag-x{background:#fdecec; color:#c0392b;}
+  .tag-ok{background:#e8f5ec; color:#1e7d46;}
+  .tag-warn{background:#fdf5e6; color:#b7791f;}
+  .note{background:#fffaf0; border:1px solid #f0e0c0; border-left:4px solid var(--warn); border-radius:6px; padding:10px 14px; margin:12px 0; font-size:14px;}
+  .key{background:#fdecec; border:1px solid #f3cfcf; border-left:4px solid var(--accent); border-radius:6px; padding:10px 14px; margin:12px 0; font-size:14px;}
+  code{background:#eef1f5; padding:1px 6px; border-radius:4px; font-family:Consolas,monospace; color:#333;}
+  ul{margin:6px 0; padding-left:22px;}
+  li{margin:4px 0;}
+  .src{color:var(--muted); font-size:12.5px; margin-top:6px;}
+  .focus{background:#eef7ff;}
+  .footer{margin-top:34px; color:var(--muted); font-size:12px; text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>数字对比记忆 · 报警控制器 / 气体防护区 / 细水雾防护区</h1>
+  <div class="sub">一级消防工程师 · 设施篇易混数字速查 &nbsp;|&nbsp; 2026-10-13</div>
+
+  <!-- ========== 速记总表 ========== -->
+  <h2>一、一页速记总表</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>类别</th><th>大数（上限）</th><th>小数（配套）</th><th>结构规律</th></tr>
+      </thead>
+      <tbody>
+        <tr class="focus">
+          <td><b>自动报警</b></td>
+          <td class="num">3200 / 1600</td>
+          <td class="num">200 / 100</td>
+          <td>总数 + 每回路（成对出现）</td>
+        </tr>
+        <tr>
+          <td><b>气体防护区</b></td>
+          <td class="num-ok">3600 / 1600</td>
+          <td class="num-ok">800 / 500（面积）</td>
+          <td>大 / 小（管网 vs 预制）</td>
+        </tr>
+        <tr>
+          <td><b>细水雾防护区</b></td>
+          <td class="num-ok">3000 / 260</td>
+          <td class="num-ok">≤3 个 / ≤100 只</td>
+          <td>大 / 小（泵组 vs 瓶组）</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="key">
+      <b>一句话防串台：</b>看到 <code>200 / 100</code>，一定是<b>报警回路</b>；防护区只记"大数配小数"——
+      气体 <b>3600/1600</b>、细水雾 <b>3000/260</b>。
+    </div>
+  </div>
+
+  <!-- ========== 报警 ========== -->
+  <h2>二、自动报警控制器</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>设备</th><th>总点数</th><th>单回路</th><th>余量</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>火灾报警控制器</td>
+          <td class="num">≤ 3200 点</td>
+          <td class="num">每一总线回路 ≤ 200 点</td>
+          <td>≥ 10%</td>
+        </tr>
+        <tr>
+          <td>消防联动控制器<br><span class="src">（联动型的各类模块总数）</span></td>
+          <td class="num">≤ 1600 点</td>
+          <td class="num">每一联动总线回路 ≤ 100 点</td>
+          <td>≥ 10%</td>
+        </tr>
+        <tr>
+          <td>总线短路隔离器</td>
+          <td class="num">≤ 32 点</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>穿越防火分区时，应在<b>穿越处</b>设总线短路隔离器。</li>
+      <li>记忆链：<b>3200→200</b>（报警）、<b>1600→100</b>（联动）、<b>32</b>（隔离器）。</li>
+    </ul>
+    <div class="src">依据：GB 50116-2013 第3.1节；讲义 3号书设施篇 L8866、L9200-9210。知识库 alarm.md:128-129。</div>
+  </div>
+
+  <!-- ========== 气体 ========== -->
+  <h2>三、气体灭火防护区</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>系统类型</th><th>最大面积</th><th>最大容积</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>管网系统</td>
+          <td class="num-ok">≤ 800 m²</td>
+          <td class="num-ok">≤ 3600 m³</td>
+        </tr>
+        <tr>
+          <td>预制（无管网）系统</td>
+          <td class="num-ok">≤ 500 m²</td>
+          <td class="num-ok">≤ 1600 m³</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>CO₂ 无明确规定，可走预制口径。</li>
+      <li>组合分配系统：保护 <b>≤ 8 个</b>防护区。</li>
+      <li>预制装置：一个防护区 <b>≤ 10 台</b>，多台同时启动、<b>时差 ≤ 2s</b>。</li>
+    </ul>
+    <div class="src">依据：GB 50370-2005 第3.2节；讲义 3号书设施篇 L6308、L7257。知识库 gas-extinguishing.md:45-48。</div>
+  </div>
+
+  <!-- ========== 细水雾 ========== -->
+  <h2>四、细水雾灭火防护区</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>项目</th><th>限值</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>单防护区容积 · 泵组系统</td><td class="num-ok">≤ 3000 m³</td></tr>
+        <tr><td>单防护区容积 · 瓶组系统</td><td class="num-ok">≤ 260 m³</td></tr>
+        <tr><td>全淹没开式系统 · 防护区数量</td><td class="num-ok">≤ 3 个</td></tr>
+        <tr><td>每套泵组带喷头数量</td><td class="num-ok">≤ 100 只</td></tr>
+        <tr><td>闭式系统作用面积</td><td class="num-ok">≥ 140 m²</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <b>经典干扰项还原：</b>真题题53 问"单个防护区容积"，选项 D 就是 <code>3200，1600</code>——把报警控制器的数字贴到细水雾上。
+      正确答案 <b>3000，260</b>。
+    </div>
+    <div class="src">依据：GB 50898-2013 第3.4节；讲义 3号书设施篇 L14750-14755、L14884-14889。知识库 water-mist.md:177-183。</div>
+  </div>
+
+  <!-- ========== 同类易混 ========== -->
+  <h2>五、同类易混数字（一并记）</h2>
+
+  <h3>A. 出现过两次的 "3200"</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>设备</th><th>限值</th></tr></thead>
+      <tbody>
+        <tr><td>火灾报警控制器</td><td class="num">≤ 3200 点</td></tr>
+        <tr><td>应急照明控制器</td><td class="num">≤ 3200 只灯具</td></tr>
+      </tbody>
+    </table>
+    <div class="src">应急照明依据：GB 51309-2018 第3.4节。知识库 emergency-lighting.md:191、210。</div>
+  </div>
+
+  <h3>B. 防护区容积 / 面积汇总</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>系统</th><th>容积</th><th>面积</th></tr></thead>
+      <tbody>
+        <tr><td>气体 · 管网</td><td class="num-ok">3600 m³</td><td>800 m²</td></tr>
+        <tr><td>气体 · 预制</td><td class="num-ok">1600 m³</td><td>500 m²</td></tr>
+        <tr><td>细水雾 · 泵组</td><td class="num-ok">3000 m³</td><td>—</td></tr>
+        <tr><td>细水雾 · 瓶组</td><td class="num-ok">260 m³</td><td>—</td></tr>
+        <tr><td>CO₂ 全淹没</td><td colspan="2">无明确规定（可走预制口径）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>C. 防护区数量上限</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>系统</th><th>数量上限</th></tr></thead>
+      <tbody>
+        <tr><td>气体 · 组合分配</td><td class="num-ok">≤ 8 个防护区</td></tr>
+        <tr><td>细水雾 · 全淹没开式</td><td class="num-ok">≤ 3 个防护区</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>D. "预制装置数量 + 时差 ≤ 2s"三兄弟</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>系统</th><th>数量上限</th><th>时差要求</th></tr></thead>
+      <tbody>
+        <tr><td>气体 · 预制</td><td class="num">≤ 10 台</td><td>同时启动、≤ 2s</td></tr>
+        <tr><td>干粉 · 预制</td><td class="num">≤ 4 套</td><td>同时启动、≤ 2s</td></tr>
+        <tr><td>细水雾 · 瓶组（全淹没开式）</td><td>多组瓶组</td><td>同时启动、≤ 2s</td></tr>
+      </tbody>
+    </table>
+    <div class="src">知识库 water-mist.md:186-194。</div>
+  </div>
+
+  <h3>E. 备用喷头数量</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>系统</th><th>备用喷头</th></tr></thead>
+      <tbody>
+        <tr><td>细水雾</td><td class="num">≥ 1% 且 ≥ 5 只</td></tr>
+        <tr><td>水喷雾</td><td class="num">≥ 1% 且 ≥ 5 个</td></tr>
+        <tr><td>自动喷水</td><td class="num">≥ 1% 且 ≥ 10 个</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>F. 备用量触发时间</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>系统</th><th>触发时间</th></tr></thead>
+      <tbody>
+        <tr><td>七氟丙烷 / IG541</td><td class="num">72 h</td></tr>
+        <tr><td>CO₂ / 干粉 / 细水雾</td><td class="num">48 h</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>G. 应急照明集中电源</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th>项目</th><th>限值</th></tr></thead>
+      <tbody>
+        <tr><td>输出回路数</td><td class="num">≤ 8 路</td></tr>
+        <tr><td>每回路供电层数 · 公共建筑</td><td class="num">≤ 8 层</td></tr>
+        <tr><td>每回路供电层数 · 住宅建筑</td><td class="num">≤ 18 层</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========== 第二批 ========== -->
+  <h2>七、第二批 · 控制器/设备"上限"类（同类串台高发）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>设备 / 对象</th><th>上限</th></tr></thead>
+      <tbody>
+        <tr class="focus"><td>火灾报警控制器</td><td class="num">≤ 3200 点；每总线回路 ≤ 200 点</td></tr>
+        <tr class="focus"><td>消防联动控制器</td><td class="num">≤ 1600 点；每联动总线回路 ≤ 100 点</td></tr>
+        <tr><td>总线短路隔离器</td><td class="num">≤ 32 点</td></tr>
+        <tr class="focus"><td>应急照明控制器</td><td class="num">≤ 3200 只灯具</td></tr>
+        <tr><td>应急照明配电箱 / 集中电源 输出回路</td><td class="num">A 型 ≤ 8 路；B 型 ≤ 12 路</td></tr>
+        <tr><td>每配电回路灯具</td><td class="num">≤ 60 只</td></tr>
+        <tr><td>回路额定电流</td><td class="num">A 型 ≤ 6A；B 型 ≤ 10A</td></tr>
+        <tr><td>集中电源额定输出功率</td><td class="num">≤ 5 kW（电缆竖井内 ≤ 1 kW）</td></tr>
+        <tr><td>竖井每回路供电层数</td><td class="num">公共 ≤ 8 层；住宅 ≤ 18 层</td></tr>
+        <tr><td>消防水泵</td><td class="num">工作泵不宜 &gt; 3 台；单台 10~320 L/s</td></tr>
+        <tr><td>可不设备用泵（宅男250）</td><td class="num">H&lt;54m 住宅 / 室外 ≤25L/s / 室内 ≤10L/s</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：GB 50116-2013 第3.1节（alarm.md:128-129）；GB 51309-2018（emergency-lighting.md:92-109）；GB 50974-2014（water-supply.md:80-89）。</div>
+  </div>
+
+  <h2>八、流量对比（L/s）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>对象</th><th>流量</th></tr></thead>
+      <tbody>
+        <tr class="focus"><td>市政消火栓 · 最不利栓</td><td class="num">≥ 15</td></tr>
+        <tr class="focus"><td>建筑室外消火栓 · 每个</td><td class="num">10 ~ 15</td></tr>
+        <tr class="focus"><td>室内消火栓</td><td class="num">5（2 支 × 2.5）</td></tr>
+        <tr><td>水泵接合器（每个）</td><td class="num">10 ~ 15</td></tr>
+        <tr><td>消防水鹤</td><td class="num">≥ 30</td></tr>
+        <tr><td>消防水泵 · 单台</td><td class="num">10 ~ 320</td></tr>
+        <tr><td>自动消防炮</td><td class="num">民建 ≥20 / 工业 ≥30</td></tr>
+        <tr><td>喷射型自动射流</td><td class="num">轻 ≥5 / 中 ≥10</td></tr>
+        <tr><td>标准喷头（K=80）</td><td class="num">约 1.3</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：GB 50974-2014 第7.2.8/7.3.5条（fire-hydrant.md:46-69）；GB 51427-2021（auto-tracking-jet.md:25-53）；water-supply.md:89。</div>
+  </div>
+
+  <h2>九、压力对比（MPa）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>对象</th><th>压力</th></tr></thead>
+      <tbody>
+        <tr><td>市政 / 室外消火栓</td><td class="num">动压 ≥0.10；静压 ≥0.14</td></tr>
+        <tr><td>室内消火栓 · 其他场所</td><td class="num">≥ 0.25（充实水柱 10m）</td></tr>
+        <tr><td>室内消火栓 · 高层厂房仓库/净高&gt;8m</td><td class="num">≥ 0.35（充实水柱 13m）</td></tr>
+        <tr><td>栓口动压上限 / 减压</td><td class="num">上限 0.50；&gt;0.70 必须减压</td></tr>
+        <tr><td>自喷最不利点</td><td class="num">动压 0.05；静压 0.10（有稳压泵 &gt;0.15）</td></tr>
+        <tr><td>水幕最不利点</td><td class="num">0.10</td></tr>
+        <tr><td>水喷雾喷头</td><td class="num">灭火 0.35 / 防护冷却 0.15</td></tr>
+        <tr><td>细水雾动压</td><td class="num">≥ 1.2</td></tr>
+        <tr><td>自动跟踪射流 · 额定压力上限</td><td class="num">炮 1.0 / 喷射型 0.8 / 喷洒型 0.6</td></tr>
+        <tr><td>消防水泵 · 零流量</td><td class="num">≤ 设计压力 140%（宜 &gt;120%）</td></tr>
+        <tr><td>消防水泵 · 150% 设计流量</td><td class="num">出口 ≥ 设计压力 65%</td></tr>
+        <tr><td>出水管压力表</td><td class="num">≥ 设计压力 2 倍 且 ≥1.60</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:143-153；fire-hydrant.md:90-98；water-supply.md:87-88、181；auto-tracking-jet.md:59。</div>
+  </div>
+
+  <h2>十、时间对比</h2>
+  <div class="card">
+    <h3>充水时间</h3>
+    <table>
+      <thead><tr><th>系统</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr><td>干式自喷</td><td class="num">≤ 1 min</td></tr>
+        <tr><td>预作用 · 单连锁 / 双连锁</td><td class="num">≤ 2 min / ≤ 1 min</td></tr>
+        <tr><td>雨淋</td><td class="num">≤ 2 min</td></tr>
+        <tr><td>干式消火栓</td><td class="num">≤ 5 min</td></tr>
+        <tr><td>泡沫 · 低倍数 / 中高倍数</td><td class="num">≤ 5 min / ≤ 1 min</td></tr>
+        <tr><td>细水雾 · 开式</td><td class="num">≤ 30 s</td></tr>
+      </tbody>
+    </table>
+    <h3>启泵与切换</h3>
+    <table>
+      <thead><tr><th>项目</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr><td>双电源自动切换</td><td class="num">≤ 2 s</td></tr>
+        <tr><td>电源 + 内燃机切换</td><td class="num">≤ 15 s</td></tr>
+        <tr><td>自动 / 手动直接启泵</td><td class="num">≤ 55 s</td></tr>
+        <tr><td>接启泵信号至正常运转</td><td class="num">≤ 2 min</td></tr>
+        <tr><td>末端试水启泵 / 机械应急</td><td class="num">≤ 5 min</td></tr>
+      </tbody>
+    </table>
+    <h3>探测器 / 显示器</h3>
+    <table>
+      <thead><tr><th>设备</th><th>报警 / 故障</th></tr></thead>
+      <tbody>
+        <tr><td>点型感烟感温</td><td class="num">10 s / 100 s</td></tr>
+        <tr><td>管路吸气式</td><td class="num">120 s / 100 s</td></tr>
+        <tr><td>可燃气体 / 剩余电流 / 火焰 / 故障电弧</td><td class="num">30 s / 100 s</td></tr>
+        <tr><td>测温探测器</td><td class="num">40 s / 100 s</td></tr>
+        <tr><td>区域显示器</td><td class="num">3 s 显示</td></tr>
+        <tr><td>图形显示装置</td><td class="num">10 s 报警 / 100 s 其他</td></tr>
+      </tbody>
+    </table>
+    <h3>喷放 / 响应</h3>
+    <table>
+      <thead><tr><th>项目</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr><td>七氟丙烷</td><td class="num">8 s（机房）/ 10 s（其他）</td></tr>
+        <tr><td>IG541</td><td class="num">48 ~ 60 s</td></tr>
+        <tr><td>CO₂ 全淹没</td><td class="num">≤ 1 min</td></tr>
+        <tr><td>水喷雾响应</td><td class="num">60 / 120 / 300 s</td></tr>
+        <tr><td>细水雾 · 开式响应</td><td class="num">≤ 30 s</td></tr>
+        <tr><td>自动跟踪射流 · 定位</td><td class="num">炮 60 s / 喷射型 30 s / 喷洒型 30 s</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:219-258；water-supply.md:131-162；auto-tracking-jet.md:59。</div>
+  </div>
+
+  <h2>十一、温度与通风换气</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>对象</th><th>温度</th></tr></thead>
+      <tbody>
+        <tr><td>灭火系统设计温度（计算基准）</td><td class="num">20 ℃</td></tr>
+        <tr><td>七氟丙烷 / IG541 防护区</td><td class="num">≥ -10 ℃</td></tr>
+        <tr><td>储瓶间 / 预制防护区</td><td class="num">-10 ~ 50 ℃</td></tr>
+        <tr><td>高压 CO₂</td><td class="num">0 ~ 49 ℃</td></tr>
+        <tr><td>低压 CO₂</td><td class="num">-23 ~ 49 ℃</td></tr>
+        <tr><td>干粉系统</td><td class="num">-20 ~ 50 ℃</td></tr>
+        <tr><td>泡沫液储存</td><td class="num">0 ~ 40 ℃</td></tr>
+        <tr><td>湿式消火栓</td><td class="num">4 ~ 70 ℃</td></tr>
+      </tbody>
+    </table>
+    <h3>通风换气次数（次/h）</h3>
+    <table>
+      <thead><tr><th>场所</th><th>正常</th><th>事故</th></tr></thead>
+      <tbody>
+        <tr><td>燃油锅炉房</td><td class="num">≥3</td><td class="num">≥6</td></tr>
+        <tr><td>燃气锅炉房</td><td class="num">≥6</td><td class="num">≥12</td></tr>
+        <tr><td>CO₂ 储瓶间</td><td class="num">≥4</td><td class="num">≥8</td></tr>
+        <tr><td>消防水泵房</td><td class="num">宜 6</td><td>—</td></tr>
+        <tr><td>汽车库（卫生要求）</td><td class="num">6 ~ 10</td><td>—</td></tr>
+        <tr><td>气体灭火防护区（灭火后）</td><td>—</td><td class="num">≥5</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:76-86、157-166。</div>
+  </div>
+
+  <h2>十二、安装高度（m）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>设备</th><th>高度</th></tr></thead>
+      <tbody>
+        <tr><td>室外消火栓</td><td class="num">0.64（±20mm）</td></tr>
+        <tr><td>室内消火栓</td><td class="num">1.1（±20mm）</td></tr>
+        <tr><td>墙壁水泵接合器</td><td class="num">0.70</td></tr>
+        <tr><td>报警阀阀体底边</td><td class="num">1.2</td></tr>
+        <tr><td>细水雾分区控制阀</td><td class="num">1.2 ~ 1.6</td></tr>
+        <tr><td>气体选择阀</td><td class="num">1.5 ~ 1.7</td></tr>
+        <tr><td>泡沫混合液立管控制阀</td><td class="num">1.1 ~ 1.5</td></tr>
+        <tr><td>灭火器挂钩托架</td><td class="num">顶部 ≤1.5；底部 ≥0.08</td></tr>
+        <tr><td>手报 / 电话 / 区域显示器</td><td class="num">1.3 ~ 1.5</td></tr>
+        <tr><td>火灾警报器 / 广播</td><td class="num">&gt; 2.2</td></tr>
+        <tr><td>控制器主显示屏</td><td class="num">1.5 ~ 1.8</td></tr>
+        <tr><td>防火门电动开门器</td><td class="num">0.9 ~ 1.3</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:168-185。</div>
+  </div>
+
+  <h2>十三、距离 / 间距（m）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>项目</th><th>数值</th></tr></thead>
+      <tbody>
+        <tr><td>室外消火栓 · 保护半径 / 间距</td><td class="num">≤150 / ≤120</td></tr>
+        <tr><td>室内消火栓 · 任意 2 个间距</td><td class="num">≤ 30</td></tr>
+        <tr><td>消防水鹤 · 间距</td><td class="num">1000</td></tr>
+        <tr><td>室外消火栓距人防出入口</td><td class="num">≥5 且 ≤40</td></tr>
+        <tr><td>水泵接合器距消火栓 / 水池</td><td class="num">≥15 且 ≤40</td></tr>
+        <tr><td>室外消火栓距加油站</td><td class="num">≥ 15</td></tr>
+        <tr><td>室外消火栓距停车场最近排汽车</td><td class="num">≥ 7</td></tr>
+        <tr><td>墙壁接合器与门窗孔洞净距</td><td class="num">≥ 2.0</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：fire-hydrant.md:37-68、168-198、241-245。</div>
+  </div>
+
+  <h2>十四、百分比 / 比例</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>项目</th><th>数值</th></tr></thead>
+      <tbody>
+        <tr><td>备用喷头</td><td class="num">≥ 1%（细水雾 ≥5 只；水喷雾 ≥5 个；自喷 ≥10 个）</td></tr>
+        <tr><td>配电回路额定功率</td><td class="num">配接总功率 ≤ 回路额定的 80%</td></tr>
+        <tr><td>流量检测装置</td><td class="num">75% 量程 &gt; 最大泵设计流量 175%（精度 0.4 级）</td></tr>
+        <tr><td>压力检测装置</td><td class="num">75% 量程 &gt; 最大泵设计压力 165%（精度 0.5 级）</td></tr>
+        <tr><td>验收 A/B/C · 水/气/干粉/防排烟</td><td class="num">A=0 且 B≤2 且 B+C≤6</td></tr>
+        <tr><td>验收 A/B/C · 灭火器</td><td class="num">A=0 且 B≤1 且 B+C≤4</td></tr>
+        <tr><td>验收 A/B/C · 火灾报警 / 应急照明</td><td class="num">A=0 且 B≤2 且 B+C≤5% 检查项</td></tr>
+        <tr><td>报警抽检（防护区/报警区域）</td><td class="num">≤5 个全检；&gt;5 个按 20% 且 ≥5 个</td></tr>
+        <tr><td>通透率 · 自喷喷头</td><td class="num">&gt; 70% 设吊顶上方</td></tr>
+        <tr><td>通透率 · 感烟探测器</td><td class="num">≤15% 下方；&gt;30% 上方；15~30% 试验</td></tr>
+        <tr><td>储烟仓 · 吊顶开孔率</td><td class="num">≤ 25% 时吊顶内高度不计入储烟仓</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:269-312；inspection.md 抽检节。</div>
+  </div>
+
+  <h2>十五、风速 / 流速（m/s）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>场景</th><th>风速 / 流速</th></tr></thead>
+      <tbody>
+        <tr><td>局部应用系统周围风速</td><td class="num">CO₂ ≤3；细水雾 ≤3；干粉 ≤2</td></tr>
+        <tr><td>消防给水管道设计流速</td><td class="num">≤2.5；任何消防管道 ≤7</td></tr>
+        <tr><td>自喷管道</td><td class="num">必要时 &gt;5 但 ≤10</td></tr>
+        <tr><td>送风口 / 排烟口</td><td class="num">≤ 7</td></tr>
+        <tr><td>排烟风管</td><td class="num">金属 ≤20；非金属 ≤15</td></tr>
+        <tr><td>补风</td><td class="num">自然 ≤3；机械 ≤10；人员密集 ≤5</td></tr>
+      </tbody>
+    </table>
+    <div class="src">依据：cross-summary.md:88-98、324-332。</div>
+  </div>
+
+  <h2>十六、管径分界与排水管径</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>项目</th><th>要求</th></tr></thead>
+      <tbody>
+        <tr class="focus"><td>气体 / 干粉 / CO₂ 管道</td><td class="num">≤80mm 螺纹；&gt;80mm 法兰（干粉 &gt;80 沟槽/法兰）</td></tr>
+        <tr class="focus"><td>消防给水（消火栓）架空管道</td><td class="num">≤DN50 螺纹/卡压；&gt;DN50 沟槽/法兰；不宜焊接</td></tr>
+        <tr><td>试水管</td><td class="num">DN65</td></tr>
+        <tr><td>末端试水装置排水管</td><td class="num">≥ DN75</td></tr>
+        <tr><td>报警阀处排水管 / 减压阀试验排水</td><td class="num">宜 DN100 / ≥DN100</td></tr>
+        <tr><td>消防水鹤管径</td><td class="num">≥ DN200</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>记忆锚：</b>"气干 80，水 50"——气体/干粉/CO₂ 系走 80mm 分界；消防给水"水"系走 DN50 分界。</div>
+    <div class="src">依据：pipe-connection.md；fire-hydrant.md:144-149；water-supply.md:189。</div>
+  </div>
+
+  <!-- ========== 成因 ========== -->
+  <h2>六、为什么容易串</h2>
+  <div class="card">
+    <p>两套规范都用"<b>成对数字</b>"表达，结构长得像，数字一混就串：</p>
+    <ul>
+      <li><b>报警类</b>：爱用 <code>总数 / 每回路</code> 成对 → 3200/200、1600/100</li>
+      <li><b>防护区类</b>：爱用 <code>大 / 小</code>（不同系统）成对 → 3600/1600、3000/260、800/500</li>
+    </ul>
+    <div class="key">
+      背诵策略：分两栏——<br>
+      <span class="tag tag-x">报警栏</span> 只记"总数 + 回路"（3200/200、1600/100、隔离器32）<br>
+      <span class="tag tag-ok">防护区栏</span> 只记"大/小"（气体 3600/1600、细水雾 3000/260）
+    </div>
+  </div>
+
+  <div class="footer">
+    资料来源：knowledge-base/ · tools/extracted-vision/（讲义视觉版）· 相关真题与规范条文
+  </div>
+
+</div>
+</body>
+</html>

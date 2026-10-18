@@ -70,6 +70,7 @@
 | safety-management/responsibility.md | 已完成 | 消防安全责任制 |
 | safety-management/inspection.md | 已完成 | 检查与维护 |
 | safety-management/commercial-complex.md | 已完成 | 大型商业综合体 |
+| safety-management/drill-training.md | 已完成 | 应急演练与培训频次（61号令，含特殊场所） |
 | safety-management/periods-summary.md | 已完成 | 管理周期汇总（大商/高层/培训演练/其他，竖向P175新增） |
 
 ### 法律法规
@@ -188,6 +189,8 @@
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
 | 管理周期 | periods-summary.md |
 | 培训演练 | periods-summary.md |
+| 培训频次 | drill-training.md, responsibility.md |
+| 演练频次 | drill-training.md |
 | 维保周期 | periods-summary.md, inspection.md, water-mist.md |
 | 巡检/检查周期 | periods-summary.md |
 | 特殊建筑 | special-buildings.md |
