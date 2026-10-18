@@ -16,19 +16,24 @@ $projectDir = 'C:\1xiangmu\yixiao'
 $logDir = Join-Path $env:TEMP 'opencode'
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 
-# cmd.exe raw redirection instead of powershell *>>: PS 5.1 wraps native stderr
-# lines as ErrorRecords; heavy stderr spam (wechat typing status) can kill the
-# pipeline and the process dies silently with exit code 0 (no auto-restart).
-$serveCmd  = "cd /d $projectDir && opencode serve --port 4096 >> $logDir\serve-task.log 2>&1"
-$bridgeCmd = "cd /d $projectDir && opencode-im-bridge >> $logDir\bridge-task.log 2>&1"
+# Headless services must not pop a visible console window. The task action runs
+# wscript.exe (a GUI-subsystem host, so no console is created) which starts the
+# service hidden (window style 0) through tools\run-*-hidden.vbs. The vbs keeps
+# raw cmd.exe redirection (>> ... 2>&1): PS 5.1 wraps native stderr lines as
+# ErrorRecords, and heavy stderr spam (wechat typing status) can kill the
+# pipeline, making the process die silently with exit code 0 (no auto-restart).
+# NOTE: powershell "-WindowStyle Hidden" is blocked by security software here
+# (observed exit -1 / 0xFFFD0000), so wscript + vbs is used instead.
+$serveLauncher  = Join-Path $projectDir 'tools\run-opencode-serve-hidden.vbs'
+$bridgeLauncher = Join-Path $projectDir 'tools\run-im-bridge-hidden.vbs'
 
 function New-BridgeTask {
     param(
         [string]$TaskName,
-        [string]$Command,
+        [string]$Launcher,
         [string]$Delay
     )
-    if ([string]::IsNullOrEmpty($Command)) { throw "Command for $TaskName is empty" }
+    if ([string]::IsNullOrEmpty($Launcher)) { throw "Launcher for $TaskName is empty" }
 
     $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
     if ($Delay) { $trigger.Delay = $Delay }
@@ -42,18 +47,22 @@ function New-BridgeTask {
         -RestartInterval (New-TimeSpan -Minutes 1) `
         -StartWhenAvailable
 
-    $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument ('/c "' + $Command + '"')
+    # wscript.exe hosts the (hidden) service: GUI-subsystem => no console window.
+    # The vbs waits on the child, so the task stays "Running" while the service
+    # lives and the RestartCount setting still kicks in if it dies.
+    $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\wscript.exe" -Argument ('//B //Nologo "' + $Launcher + '"')
     if ($null -eq $action) { throw "Failed to create action for $TaskName" }
-    # S4U = "run whether user is logged on or not" without stored password.
-    # Runs headless in session 0: no console window to close by accident.
-    # If security software blocks S4U, revert to Interactive (visible window).
-    $principal = New-ScheduledTaskPrincipal -UserId "$env:COMPUTERNAME\$env:USERNAME" -LogonType S4U
+    # Interactive = run in the user's own session while logged on (not session 0).
+    # Chosen over S4U so `schtasks /End` reliably terminates the whole process
+    # tree (no orphaned bun.exe) and so a non-elevated shell can Stop-Process it.
+    # The visible-console downside of Interactive is removed by the hidden vbs.
+    $principal = New-ScheduledTaskPrincipal -UserId "$env:COMPUTERNAME\$env:USERNAME" -LogonType Interactive
 
     Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Force | Out-Null
     Write-Host "Registered task: $TaskName"
 }
 
-New-BridgeTask -TaskName 'OpenCodeServe'     -Command $serveCmd  -Delay ''
-New-BridgeTask -TaskName 'OpenCodeIMBridge'  -Command $bridgeCmd -Delay 'PT30S'
+New-BridgeTask -TaskName 'OpenCodeServe'     -Launcher $serveLauncher  -Delay ''
+New-BridgeTask -TaskName 'OpenCodeIMBridge'  -Launcher $bridgeLauncher -Delay 'PT30S'
 
 Write-Host "Log dir: $logDir"
