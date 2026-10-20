@@ -93,6 +93,7 @@
 | 火灾危险性分类 | fire-classification.md |
 | 耐火等级 | fire-resistance.md, fire-classification.md |
 | 防火间距 | site-layout.md |
+| 防火间距不足措施（改提拆设减） | site-layout.md |
 | 总平面布局 | site-layout.md |
 | 平面布置 | building-plane.md |
 | 设备用房 | building-plane.md |
@@ -122,6 +123,8 @@
 | 防火门 | fire-separation.md |
 | 防火阀/排烟防火阀 | fire-separation.md |
 | 建筑防爆 | explosion-prevention.md |
+| 建筑防爆措施（小花和巫婆勾心斗角） | explosion-prevention.md |
+| 厨房防爆（西门金莲自首五二） | explosion-prevention.md |
 | 泄压 | explosion-prevention.md |
 | 电气防爆 | explosion-prevention.md |
 | 电气防火 | electrical-fire.md |
@@ -152,6 +155,9 @@
 | 火灾延续时间 | water-supply.md |
 | 消防水箱 | water-supply.md |
 | 消防水泵 | water-supply.md |
+| 水泵铭牌/选型（刘洋笑气功） | water-supply.md |
+| 管道选材（媳妇食土喝风） | water-supply.md |
+| 水流方向永久标志（骑驴能减脂） | water-supply.md |
 | 流量和压力测试装置 | water-supply.md |
 | 试水管排水 | water-supply.md |
 | 自动喷水灭火 | automatic-sprinkler.md |
@@ -163,6 +169,8 @@
 | 坡屋顶/屋脊喷头 | automatic-sprinkler.md |
 | 末端试水 | automatic-sprinkler.md |
 | 灭火器 | fire-extinguisher.md |
+| 灭火器选择因素（体重相同能吻别） | fire-extinguisher.md |
+| 灭火器维修合格证（编制两日点人名） | fire-extinguisher.md, inspection.md |
 | 灭火器危险等级 | fire-extinguisher.md |
 | 消火栓 | fire-hydrant.md |
 | 火灾自动报警 | alarm.md |
@@ -235,6 +243,7 @@
 | 火警分级/应急救援分级 | fire-rescue-force.md |
 | 乡镇消防队 | fire-rescue-force.md |
 | 横向对比（启动方式/安装高度等） | cross-summary.md |
+| 通风换气次数 | cross-summary.md, utility-tunnel.md |
 | 抽检百分比 | inspection.md, cross-summary.md |
 | 验收缺陷A/B/C判定 | cross-summary.md, foam-extinguishing.md |
 | 通透率/吊顶开孔 | cross-summary.md, smoke-control.md, alarm.md |
