@@ -71,7 +71,7 @@
 | safety-management/inspection.md | 已完成 | 检查与维护 |
 | safety-management/commercial-complex.md | 已完成 | 大型商业综合体 |
 | safety-management/drill-training.md | 已完成 | 应急演练与培训频次（61号令，含特殊场所） |
-| safety-management/periods-summary.md | 已完成 | 管理周期汇总（大商/高层/培训演练/其他，竖向P175新增） |
+| safety-management/periods-summary.md | 已完成 | 法律周期总表（大商/高层/培训演练/其他，5号书P335+竖向P175，32项全展开） |
 
 ### 法律法规
 
@@ -202,6 +202,7 @@
 | 疏散引导箱 | commercial-complex.md |
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
 | 管理周期 | periods-summary.md |
+| 法律周期 | periods-summary.md |
 | 培训演练 | periods-summary.md |
 | 培训频次 | drill-training.md, responsibility.md |
 | 演练频次 | drill-training.md |

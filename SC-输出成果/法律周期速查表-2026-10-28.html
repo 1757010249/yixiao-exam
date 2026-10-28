@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法律周期速查表 · 一级消防工程师综合能力</title>
+<style>
+:root{
+  --bg:#f5f2ea;
+  --paper:#fffdf8;
+  --ink:#1c2a25;
+  --muted:#6d7872;
+  --line:#e3ddcf;
+  --green:#0f6b4f;
+  --green-2:#1c8a67;
+  --green-soft:#e7f3ed;
+  --blue:#2b5f8a;
+  --blue-2:#3f7cad;
+  --blue-soft:#e9f1f8;
+  --amber:#a36a13;
+  --amber-2:#c58a28;
+  --amber-soft:#fbf2dd;
+  --purple:#6b4a7a;
+  --purple-2:#8b649d;
+  --purple-soft:#f2eaf6;
+  --red:#a03b2c;
+  --shadow:0 12px 34px rgba(28,42,37,.08);
+  --shadow-sm:0 4px 14px rgba(28,42,37,.06);
+  --radius:18px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 4%, rgba(15,107,79,.09), transparent 30rem),
+    radial-gradient(circle at 96% 2%, rgba(163,106,19,.09), transparent 28rem),
+    radial-gradient(circle at 50% 100%, rgba(43,95,138,.06), transparent 34rem),
+    var(--bg);
+  font-family:"Noto Sans SC","Source Han Sans SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(15,107,79,.18)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:64px 0 40px;
+  border-bottom:1px solid rgba(227,221,207,.75);
+}
+.hero::before{
+  content:"32";
+  position:absolute;
+  right:max(20px,calc((100% - var(--max))/2 - 10px));
+  top:10px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(150px,22vw,300px);
+  line-height:1;
+  color:rgba(15,107,79,.055);
+  font-weight:700;
+  letter-spacing:-.08em;
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;
+  right:-160px;top:-160px;
+  border:1px solid rgba(15,107,79,.16);
+  border-radius:50%;
+  box-shadow:0 0 0 38px rgba(15,107,79,.035),0 0 0 76px rgba(15,107,79,.025);
+  pointer-events:none;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 13px;
+  border:1px solid rgba(15,107,79,.24);
+  border-radius:999px;
+  color:var(--green);
+  background:rgba(255,253,248,.62);
+  font-size:13px;font-weight:700;letter-spacing:.08em;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(15,107,79,.12)}
+.hero h1{
+  position:relative;
+  margin:22px 0 12px;
+  font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif;
+  font-size:clamp(46px,7vw,82px);
+  line-height:1.08;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.hero h1 span{color:var(--green)}
+.hero .lead{
+  position:relative;
+  max-width:760px;
+  margin:0;
+  color:#3d4b45;
+  font-size:clamp(15px,1.6vw,18px);
+}
+.meta{
+  position:relative;
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:26px;
+}
+.meta span{
+  padding:8px 13px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,253,248,.72);
+  color:#4f5c56;
+  font-size:13px;
+}
+.meta b{color:var(--green);font-weight:700}
+
+/* ---------- sticky nav ---------- */
+.toc{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,242,234,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(227,221,207,.9);
+}
+.toc-in{
+  display:flex;align-items:center;gap:18px;
+  min-height:64px;
+}
+.brand{
+  flex:0 0 auto;
+  font-family:"Noto Serif SC","Songti SC",serif;
+  font-weight:800;font-size:16px;letter-spacing:.04em;
+  color:var(--green);
+  white-space:nowrap;
+}
+.navlinks{display:flex;gap:6px;flex:1;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{
+  white-space:nowrap;
+  padding:7px 11px;border-radius:999px;
+  font-size:13px;color:#53605a;
+  transition:.18s;
+}
+.navlinks a:hover{background:rgba(15,107,79,.08);color:var(--green)}
+.navlinks a.active{background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(15,107,79,.2)}
+.tools{display:flex;gap:8px;align-items:center;flex:0 0 auto}
+.search{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--paper);
+}
+.search svg{width:15px;height:15px;stroke:#7b857f;fill:none;stroke-width:1.8}
+.search input{
+  border:0;outline:0;background:transparent;
+  width:170px;font-size:13px;color:var(--ink);
+  font-family:inherit;
+}
+.search input::placeholder{color:#9aa39e}
+.btn{
+  border:1px solid var(--line);
+  background:var(--paper);
+  color:#40504a;
+  border-radius:11px;
+  padding:8px 12px;
+  font-size:12.5px;font-weight:600;
+  cursor:pointer;
+  transition:.18s;
+  font-family:inherit;
+}
+.btn:hover{border-color:rgba(15,107,79,.35);color:var(--green);transform:translateY(-1px)}
+
+/* ---------- main ---------- */
+main{padding:34px 0 10px}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+  margin:0 0 18px;
+}
+.section-head h2{
+  margin:0;
+  font-family:"Noto Serif SC","Songti SC",serif;
+  font-size:clamp(24px,3vw,34px);
+  letter-spacing:.02em;
+}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.count{
+  flex:0 0 auto;
+  padding:6px 11px;
+  border-radius:999px;
+  background:rgba(15,107,79,.08);
+  color:var(--green);
+  font-size:12.5px;font-weight:700;
+}
+
+/* ---------- rail ---------- */
+.rail{
+  margin:6px 0 40px;
+  padding:22px 22px 20px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,253,248,.96),rgba(255,253,248,.76));
+  box-shadow:var(--shadow-sm);
+}
+.rail-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.rail-head h3{margin:0;font-size:15px;letter-spacing:.04em;color:#33423b}
+.rail-head span{font-size:12px;color:var(--muted)}
+.rail-scroll{display:grid;grid-template-columns:repeat(8,minmax(120px,1fr));gap:10px;overflow-x:auto;padding-bottom:2px}
+.step{
+  position:relative;
+  min-width:120px;
+  padding:12px 12px 13px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#fffefb;
+}
+.step::before{
+  content:"";position:absolute;left:12px;top:0;width:26px;height:3px;border-radius:0 0 4px 4px;
+  background:var(--green);
+}
+.step:nth-child(2)::before,.step:nth-child(3)::before{background:var(--green-2)}
+.step:nth-child(4)::before,.step:nth-child(5)::before{background:var(--blue-2)}
+.step:nth-child(6)::before,.step:nth-child(7)::before{background:var(--amber-2)}
+.step:nth-child(8)::before{background:var(--purple-2)}
+.step b{display:block;font-size:13px;color:#2f3d37;letter-spacing:.04em}
+.step small{display:block;margin-top:5px;color:#6b7772;font-size:11.5px;line-height:1.55}
+
+/* ---------- group ---------- */
+.group{
+  margin:0 0 42px;
+  scroll-margin-top:88px;
+}
+.group-head{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-bottom:16px;
+}
+.group-no{
+  flex:0 0 auto;
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;
+  font-family:Georgia,serif;font-weight:700;font-size:19px;
+  color:#fff;
+  box-shadow:0 8px 18px rgba(28,42,37,.12);
+}
+.group-title h2{
+  margin:0;
+  font-family:"Noto Serif SC","Songti SC",serif;
+  font-size:clamp(23px,2.6vw,31px);
+  line-height:1.25;
+}
+.group-title p{margin:3px 0 0;color:var(--muted);font-size:13.5px}
+.group-title .rule{
+  display:inline-block;margin-left:8px;padding:2px 8px;
+  border-radius:6px;font-size:11.5px;font-weight:700;vertical-align:2px;
+}
+.g-green .group-no{background:linear-gradient(135deg,var(--green),var(--green-2))}
+.g-green .rule{background:var(--green-soft);color:var(--green)}
+.g-blue .group-no{background:linear-gradient(135deg,var(--blue),var(--blue-2))}
+.g-blue .rule{background:var(--blue-soft);color:var(--blue)}
+.g-amber .group-no{background:linear-gradient(135deg,var(--amber),var(--amber-2))}
+.g-amber .rule{background:var(--amber-soft);color:var(--amber)}
+.g-purple .group-no{background:linear-gradient(135deg,var(--purple),var(--purple-2))}
+.g-purple .rule{background:var(--purple-soft);color:var(--purple)}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.card{
+  position:relative;
+  display:flex;flex-direction:column;
+  min-height:196px;
+  padding:16px 16px 14px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:var(--paper);
+  box-shadow:var(--shadow-sm);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--accent,var(--green));
+  opacity:.85;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(15,107,79,.22)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.card-num{
+  font-family:Georgia,serif;font-size:12px;font-weight:700;color:#a3aca7;
+  letter-spacing:.08em;
+}
+.badge{
+  flex:0 0 auto;
+  padding:3px 8px;border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:.03em;
+  background:var(--accent-soft,var(--green-soft));
+  color:var(--accent-ink,var(--green));
+  white-space:nowrap;
+}
+.card h3{
+  margin:0 0 7px;
+  font-size:16px;line-height:1.4;letter-spacing:.01em;
+  color:#21302a;
+}
+.card p{
+  margin:0;
+  color:#56635d;
+  font-size:12.8px;
+  line-height:1.68;
+}
+.card .src{
+  margin-top:auto;
+  padding-top:10px;
+  border-top:1px dashed #ece6d9;
+  color:#98a19c;
+  font-size:10.8px;
+  line-height:1.45;
+}
+.g-green{--accent:var(--green);--accent-soft:var(--green-soft);--accent-ink:var(--green)}
+.g-blue{--accent:var(--blue);--accent-soft:var(--blue-soft);--accent-ink:var(--blue)}
+.g-amber{--accent:var(--amber);--accent-soft:var(--amber-soft);--accent-ink:var(--amber)}
+.g-purple{--accent:var(--purple);--accent-soft:var(--purple-soft);--accent-ink:var(--purple)}
+
+/* ---------- memory line ---------- */
+.memory{
+  margin:0 0 42px;
+  padding:24px;
+  border-radius:var(--radius);
+  border:1px solid rgba(15,107,79,.16);
+  background:
+    linear-gradient(135deg,rgba(231,243,237,.9),rgba(255,253,248,.9));
+  box-shadow:var(--shadow-sm);
+}
+.memory h2{
+  margin:0 0 14px;
+  font-family:"Noto Serif SC","Songti SC",serif;
+  font-size:24px;
+}
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.memory-item{
+  padding:12px 14px;
+  border-radius:12px;
+  background:rgba(255,253,248,.86);
+  border:1px solid rgba(227,221,207,.8);
+  font-size:13px;
+  color:#42504a;
+}
+.memory-item b{color:var(--green);margin-right:6px}
+.memory-item span{color:#6b7772}
+
+/* ---------- tips ---------- */
+.tips{
+  margin:0 0 42px;
+  scroll-margin-top:88px;
+}
+.tips-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tip{
+  display:flex;gap:12px;
+  padding:15px 16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--paper);
+  box-shadow:var(--shadow-sm);
+}
+.tip-no{
+  flex:0 0 auto;
+  width:28px;height:28px;border-radius:9px;
+  display:grid;place-items:center;
+  background:var(--amber-soft);color:var(--amber);
+  font-family:Georgia,serif;font-weight:700;font-size:13px;
+}
+.tip p{margin:0;font-size:13px;color:#4a5852;line-height:1.65}
+.tip b{color:#26342e}
+
+/* ---------- conflict ---------- */
+.conflict{
+  margin:0 0 46px;
+  padding:20px 22px;
+  border:1px solid rgba(160,59,44,.22);
+  border-left:4px solid var(--red);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(160,59,44,.055),rgba(255,253,248,.9));
+}
+.conflict h2{
+  margin:0 0 7px;
+  font-size:17px;color:var(--red);letter-spacing:.02em;
+}
+.conflict p{margin:0;color:#5a4a45;font-size:13px;line-height:1.72}
+.conflict code{
+  padding:1px 5px;border-radius:5px;
+  background:rgba(160,59,44,.08);
+  color:#7c2f23;font-size:12px;
+  font-family:ui-monospace,Consolas,monospace;
+}
+
+/* ---------- footer ---------- */
+footer{
+  padding:26px 0 46px;
+  border-top:1px solid rgba(227,221,207,.9);
+  color:#7d8781;
+  font-size:12.5px;
+}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{color:#4b5953;font-weight:600}
+
+/* ---------- backtop ---------- */
+.backtop{
+  position:fixed;right:22px;bottom:22px;z-index:60;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(15,107,79,.25);
+  background:var(--paper);color:var(--green);
+  font-size:18px;cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:.2s;
+}
+.backtop.show{opacity:1;pointer-events:auto;transform:none}
+.hidden{display:none!important}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rail-scroll{grid-template-columns:repeat(8,minmax(140px,1fr))}
+}
+@media(max-width:720px){
+  .wrap{width:calc(100% - 28px)}
+  .hero{padding:44px 0 30px}
+  .hero::before{font-size:150px;right:8px;top:36px}
+  .toc-in{flex-wrap:wrap;gap:8px;padding:9px 0}
+  .navlinks{order:3;flex-basis:100%;padding-bottom:2px}
+  .tools{margin-left:auto}
+  .search input{width:120px}
+  .brand{font-size:15px}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:0}
+  .memory-grid,.tips-grid{grid-template-columns:1fr}
+  .rail{padding:16px}
+  .section-head{align-items:flex-start}
+  .count{display:none}
+  footer{padding-bottom:70px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .toc,.backtop,.tools,.rail-head span{display:none!important}
+  .hero{padding:20px 0 14px}
+  .hero::before,.hero::after{display:none}
+  .hero h1{font-size:40px}
+  main{padding-top:10px}
+  .card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  .group{break-inside:avoid;margin-bottom:22px}
+  .memory,.tips,.conflict{break-inside:avoid;box-shadow:none}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>一级消防工程师 · 综合能力 · 法规补充内容</div>
+    <h1>法律<span>周期</span></h1>
+    <p class="lead">大商、高层、培训演练、其他时间——把散落在法规里的时间节点，压成一张能背、能查、能打印的速查表。</p>
+    <div class="meta">
+      <span>主表：<b>5号书 P335</b></span>
+      <span>同表：<b>奇门遁甲竖向 P175</b></span>
+      <span>共 <b>32</b> 个时间节点</span>
+      <span>整理：<b>2026-10-28</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap toc-in">
+    <div class="brand">法律周期 · 速查</div>
+    <div class="navlinks" id="navlinks">
+      <a href="#dashang" class="active">大商</a>
+      <a href="#gaoceng">高层</a>
+      <a href="#peixun">培训演练</a>
+      <a href="#qita">其他时间</a>
+      <a href="#jiyi">串记</a>
+      <a href="#yicuo">易错点</a>
+      <a href="#chongtu">冲突标注</a>
+    </div>
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="search" type="search" placeholder="搜：高层 / 5日 / 演练…" autocomplete="off">
+      </div>
+      <button class="btn" onclick="window.print()">打印 / 存 PDF</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="rail" aria-label="频率轴">
+    <div class="rail-head">
+      <h3>先看频率轴：从最密到最疏</h3>
+      <span id="count">共 32 条</span>
+    </div>
+    <div class="rail-scroll">
+      <div class="step"><b>每 2 小时</b><small>公众聚集场所<br>营业期间巡查</small></div>
+      <div class="step"><b>每日</b><small>消防安全重点单位<br>防火巡查</small></div>
+      <div class="step"><b>每半月</b><small>高层公共建筑<br>防火检查</small></div>
+      <div class="step"><b>每月</b><small>柴油 / 单项检查<br>住宅检查 / 月例会</small></div>
+      <div class="step"><b>每季</b><small>综合研判 / 排油烟<br>分预案 / 高危演练</small></div>
+      <div class="step"><b>每半年</b><small>联动检查 / 培训<br>重点单位演练</small></div>
+      <div class="step"><b>每年</b><small>全面检测 / 评估<br>非超高全要素</small></div>
+      <div class="step"><b>其他时限</b><small>3日 / 5日 / 15日<br>90日 / 6年</small></div>
+    </div>
+  </section>
+
+  <section class="group g-green" id="dashang">
+    <div class="group-head">
+      <div class="group-no">01</div>
+      <div class="group-title">
+        <h2>大商 <span class="rule">大型商业综合体</span></h2>
+        <p>总建筑面积 ≥ 5 万㎡；这一组全是「大商规则」里的硬时限。</p>
+      </div>
+    </div>
+    <div class="cards">
+
+      <article class="card" data-key="大商 维保 5日 报告 书面结论 消防技术服务机构">
+        <div class="card-top"><span class="card-num">01</span><span class="badge">5 日</span></div>
+        <h3>维保 5 日报告</h3>
+        <p>消防技术服务机构定期全面检查、维护保养，<b>检查完毕后 5 日内</b>出具书面结论文件，并在建筑醒目位置公示机构名称、项目负责人和维保日期。</p>
+        <div class="src">大商规则 5.11d · 5号书 P288</div>
+      </article>
+
+      <article class="card" data-key="大商 转岗 3日 培训 入职 上岗前">
+        <div class="card-top"><span class="card-num">02</span><span class="badge">3 日</span></div>
+        <h3>转岗 3 日培训</h3>
+        <p>从业人员及兼职人员<b>入职或转岗 3 日内</b>接受上岗前消防培训；在职期间至少每半年再培训一次。</p>
+        <div class="src">大商规则 15.4 · 5号书 P298</div>
+      </article>
+
+      <article class="card" data-key="大商 每月 柴油 发电机 启动试验">
+        <div class="card-top"><span class="card-num">03</span><span class="badge">每月</span></div>
+        <h3>每月柴油</h3>
+        <p>柴油发电机<b>每月至少启动试验一次</b>，确保火灾时能够正常使用。</p>
+        <div class="src">大商规则 9.15 · 5号书 P296</div>
+      </article>
+
+      <article class="card" data-key="大商 每月 单项检查 建筑消防设施">
+        <div class="card-top"><span class="card-num">04</span><span class="badge">每月</span></div>
+        <h3>每月单项检查</h3>
+        <p><b>每月</b>至少进行一次建筑消防设施单项检查。</p>
+        <div class="src">大商规则 14.3 · 5号书 P297</div>
+      </article>
+
+      <article class="card" data-key="大商 季度 综合研判 消防技术服务 故障">
+        <div class="card-top"><span class="card-num">05</span><span class="badge">每季</span></div>
+        <h3>季度综合研判</h3>
+        <p>消防技术服务人员<b>每季度</b>对服务情况综合研判，分析故障多发区域及时段，对不合理设计、安装问题提出整改意见。</p>
+        <div class="src">大商规则 5.12c · 5号书 P288</div>
+      </article>
+
+      <article class="card" data-key="大商 季度 排油烟 清洗 厨房 烟道">
+        <div class="card-top"><span class="card-num">06</span><span class="badge">每季</span></div>
+        <h3>季度排油烟清洗</h3>
+        <p>厨房及公共区域油烟管道根据积聚情况确定频次，但<b>至少每季度清洗一次</b>；宾馆、餐饮、医院、学校厨房烟道同。</p>
+        <div class="src">大商规则 9.2j · 5号书 P292</div>
+      </article>
+
+      <article class="card" data-key="大商 半年 联动检查 培训 演练">
+        <div class="card-top"><span class="card-num">07</span><span class="badge">每半年</span></div>
+        <h3>半年联动检查培训</h3>
+        <p><b>每半年</b>至少一次建筑消防设施联动检查；责任人、管理人、归口负责人、从业人员、专职/志愿/保安均至少每半年一次培训；每半年至少一次消防演练。</p>
+        <div class="src">大商规则 14.3 / 15.3-15.5 / 16.3 · 5号书 P297-299</div>
+      </article>
+
+      <article class="card" data-key="大商 每年 全面检测 10万 联合演练 评估 微型消防站">
+        <div class="card-top"><span class="card-num">08</span><span class="badge">每年</span></div>
+        <h3>年全面检测 + 10 万㎡联合演练</h3>
+        <p><b>每年</b>至少一次消防设施全面检测；总建筑面积 <b>&gt;10 万㎡</b> 的大商每年与消防救援机构联合演练；&gt;10 万㎡ 预案评估论证；&gt;20 万㎡ 至少 2 个微型消防站。</p>
+        <div class="src">大商规则 6.1 / 16.1 / 17.x · 5号书 P288、P299、P303</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group g-blue" id="gaoceng">
+    <div class="group-head">
+      <div class="group-no">02</div>
+      <div class="group-title">
+        <h2>高层 <span class="rule">高层民用建筑</span></h2>
+        <p>公共与住宅分开记；分预案季度，全要素演练看高度。</p>
+      </div>
+    </div>
+    <div class="cards">
+
+      <article class="card" data-key="高层 公共 半月 防火检查">
+        <div class="card-top"><span class="card-num">01</span><span class="badge">每半月</span></div>
+        <h3>公共半月检查</h3>
+        <p>高层<b>公共</b>建筑<b>每半月</b>至少开展一次防火检查，并填写检查记录。</p>
+        <div class="src">高层规定 · 5号书 P313 / P316</div>
+      </article>
+
+      <article class="card" data-key="高层 住宅 每月 防火检查">
+        <div class="card-top"><span class="card-num">02</span><span class="badge">每月</span></div>
+        <h3>住宅月检查</h3>
+        <p>高层<b>住宅</b>建筑<b>每月</b>至少开展一次防火检查，并填写检查记录。</p>
+        <div class="src">高层规定 · 5号书 P313 / P316</div>
+      </article>
+
+      <article class="card" data-key="高层 季度 分预案 演练 综合 专项">
+        <div class="card-top"><span class="card-num">03</span><span class="badge">每季</span></div>
+        <h3>季度分预案</h3>
+        <p>编制分预案的部门<b>每季度</b>至少进行一次综合演练，或者专项灭火、疏散演练。</p>
+        <div class="src">高层规定 · 电子卡42章经 · 5号书 P313 / P335</div>
+      </article>
+
+      <article class="card" data-key="高层 公共 半年 培训 员工">
+        <div class="card-top"><span class="card-num">04</span><span class="badge">每半年</span></div>
+        <h3>公共半年培训</h3>
+        <p>高层<b>公共</b>建筑内的单位<b>每半年</b>对员工至少开展一次消防安全培训。</p>
+        <div class="src">高层规定 · 5号书 P316</div>
+      </article>
+
+      <article class="card" data-key="高层 超高层 100米 半年 全要素 演练">
+        <div class="card-top"><span class="card-num">05</span><span class="badge">每半年</span></div>
+        <h3>超高层半年演练</h3>
+        <p>建筑高度 <b>&gt;100m</b> 的高层民用建筑，<b>每半年</b>至少组织一次全要素综合演练。</p>
+        <div class="src">高层规定 · 5号书 P313</div>
+      </article>
+
+      <article class="card" data-key="高层 住宅 每年 培训 疏散演练">
+        <div class="card-top"><span class="card-num">06</span><span class="badge">每年</span></div>
+        <h3>住宅每年培训</h3>
+        <p>高层<b>住宅</b>物业服务企业<b>每年</b>至少对居住人员开展一次培训，并组织一次疏散演练。</p>
+        <div class="src">高层规定 · 5号书 P316</div>
+      </article>
+
+      <article class="card" data-key="高层 非超高 100米 每年 全要素 演练">
+        <div class="card-top"><span class="card-num">07</span><span class="badge">每年</span></div>
+        <h3>非超高年演练</h3>
+        <p>建筑高度 <b>≤100m</b> 的高层民用建筑，<b>每年</b>至少组织一次全要素综合演练。</p>
+        <div class="src">高层规定 · 5号书 P313</div>
+      </article>
+
+      <article class="card" data-key="高层 每年 评估 消防安全评估">
+        <div class="card-top"><span class="card-num">08</span><span class="badge">每年</span></div>
+        <h3>年评估</h3>
+        <p>高层民用建筑<b>每年</b>至少开展一次消防安全评估。</p>
+        <div class="src">高层规定 · 5号书 P313 / P316</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group g-amber" id="peixun">
+    <div class="group-head">
+      <div class="group-no">03</div>
+      <div class="group-title">
+        <h2>培训演练 <span class="rule">看单位类型</span></h2>
+        <p>重点单位「培训年、演练半年」；人密培训半年；检查看机关/其他。</p>
+      </div>
+    </div>
+    <div class="cards">
+
+      <article class="card" data-key="培训 重点单位 每年 员工 消防安全培训">
+        <div class="card-top"><span class="card-num">01</span><span class="badge">每年</span></div>
+        <h3>重点单位年培训</h3>
+        <p>消防安全重点单位对每名员工<b>至少每年一次</b>消防安全培训。</p>
+        <div class="src">公安部令第61号第36条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="演练 重点单位 每半年 灭火 应急疏散">
+        <div class="card-top"><span class="card-num">02</span><span class="badge">每半年</span></div>
+        <h3>重点单位半年演练</h3>
+        <p>消防安全重点单位<b>至少每半年一次</b>灭火和应急疏散演练，并结合实际完善预案。</p>
+        <div class="src">公安部令第61号第40条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="培训 人员密集 公众聚集 每半年 员工">
+        <div class="card-top"><span class="card-num">03</span><span class="badge">每半年</span></div>
+        <h3>公共聚集半年培训</h3>
+        <p><b>人员密集场所</b>（含公众聚集场所）对员工<b>至少每半年一次</b>消防安全培训。</p>
+        <div class="src">公安部令第61号第36条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="演练 其他单位 每年 应急疏散">
+        <div class="card-top"><span class="card-num">04</span><span class="badge">每年</span></div>
+        <h3>其他单位年演练</h3>
+        <p>其他单位结合本单位实际，<b>至少每年一次</b>演练。</p>
+        <div class="src">公安部令第61号第40条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="检查 机关 团体 事业单位 每季度 防火检查">
+        <div class="card-top"><span class="card-num">05</span><span class="badge">每季</span></div>
+        <h3>机关团体季度检查</h3>
+        <p>机关、团体、事业单位<b>至少每季度一次</b>防火检查。</p>
+        <div class="src">公安部令第61号第26条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="演练 高危单位 每季度 火灾高危">
+        <div class="card-top"><span class="card-num">06</span><span class="badge">每季</span></div>
+        <h3>高危单位季度演练</h3>
+        <p>火灾高危单位<b>至少每季度一次</b>演练。</p>
+        <div class="src">公安部令第121号 · 5号书 P275</div>
+      </article>
+
+      <article class="card" data-key="检查 其他单位 每月 防火检查">
+        <div class="card-top"><span class="card-num">07</span><span class="badge">每月</span></div>
+        <h3>其他单位月检查</h3>
+        <p>其他单位<b>至少每月一次</b>防火检查。</p>
+        <div class="src">公安部令第61号第26条 · 5号书 P236</div>
+      </article>
+
+      <article class="card" data-key="演练 内部 预案 每月 专项 疏散 宜">
+        <div class="card-top"><span class="card-num">08</span><span class="badge">每月 · 宜</span></div>
+        <h3>内部预案月演练</h3>
+        <p>单位内设部门结合实际开展专项/分预案演练，<b>宜每月一次</b>疏散演练。注意是「宜」，不是「应」。</p>
+        <div class="src">5号书 P275</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group g-purple" id="qita">
+    <div class="group-head">
+      <div class="group-no">04</div>
+      <div class="group-title">
+        <h2>其他时间 <span class="rule">许可 · 备案 · 复核 · 档案</span></h2>
+        <p>数字最碎的一组，抓住「日 / 工作日 / 年」三种单位。</p>
+      </div>
+    </div>
+    <div class="cards">
+
+      <article class="card" data-key="三项备案 5个工作日 重点单位 责任人 管理人 维保合同 自我评估">
+        <div class="card-top"><span class="card-num">01</span><span class="badge">5 个工作日</span></div>
+        <h3>三项备案 5 日</h3>
+        <p>重点单位三项报告备案：责任人/管理人/专兼职管理员/消控室值班人员确定或变更、维保合同签订、自我评估完成——均自起算之日起 <b>5 个工作日内</b>。</p>
+        <div class="src">5号书 P256-257</div>
+      </article>
+
+      <article class="card" data-key="消防检查 10个工作日 公众聚集 告知承诺 许可">
+        <div class="card-top"><span class="card-num">02</span><span class="badge">10 个工作日</span></div>
+        <h3>消防检查 10 个工作日</h3>
+        <p>公众聚集场所投入使用、营业前检查，<b>不采用告知承诺</b>的，受理之日起 <b>10 个工作日内</b>检查，符合则许可。</p>
+        <div class="src">消防法第15条 · 5号书 P229</div>
+      </article>
+
+      <article class="card" data-key="事故异议 15日 复核 火灾事故认定">
+        <div class="card-top"><span class="card-num">03</span><span class="badge">15 日</span></div>
+        <h3>事故异议 15 日内</h3>
+        <p>对火灾事故认定有异议，自认定书送达之日起 <b>15 日内</b>向上一级消防救援机构提出书面复核申请。</p>
+        <div class="src">火灾事故调查规定 · 5号书 P235</div>
+      </article>
+
+      <article class="card" data-key="技术鉴定 90日 消防产品 证书 3年">
+        <div class="card-top"><span class="card-num">04</span><span class="badge">90 日</span></div>
+        <h3>技术鉴定 90 日内</h3>
+        <p>消防产品技术鉴定机构接受委托之日起 <b>90 日内</b>颁发技术鉴定证书，证书有效期 <b>3 年</b>。</p>
+        <div class="src">消防产品监督管理规定 · 5号书 P235</div>
+      </article>
+
+      <article class="card" data-key="消防技术档案 6年 技术服务 保管">
+        <div class="card-top"><span class="card-num">05</span><span class="badge">6 年</span></div>
+        <h3>消防技术档案 6 年</h3>
+        <p>消防<b>技术服务</b>档案保管期限 <b>6 年</b>。不要与单位消防档案混：原始资料长期、值班巡查 1 年、检测维保 5 年。</p>
+        <div class="src">社会消防技术服务管理规定 · 5号书 P314</div>
+      </article>
+
+      <article class="card" data-key="人密 月例会 人员密集 每月 不宜少于">
+        <div class="card-top"><span class="card-num">06</span><span class="badge">每月 · 不宜少于 1 次</span></div>
+        <h3>人密场所月例会</h3>
+        <p>人员密集场所消防安全例会由责任人主持、管理人提出议程，<b>每月不宜少于一次</b>，形成会议纪要或决议。</p>
+        <div class="src">GB/T 40248-2021 · 5号书 P326</div>
+      </article>
+
+      <article class="card" data-key="重点单位 每日 巡查 防火">
+        <div class="card-top"><span class="card-num">07</span><span class="badge">每日</span></div>
+        <h3>重点单位日巡查</h3>
+        <p>消防安全重点单位<b>每日</b>防火巡查一次，填写巡查记录。</p>
+        <div class="src">公安部令第61号第25条 · 5号书 P50</div>
+      </article>
+
+      <article class="card" data-key="公共聚集 营业 2小时 巡查 遗留火种">
+        <div class="card-top"><span class="card-num">08</span><span class="badge">每 2 小时</span></div>
+        <h3>公共聚集营业 2H</h3>
+        <p>公众聚集场所营业期间<b>至少每 2 小时</b>一次防火巡查；营业结束时检查现场，消除遗留火种。</p>
+        <div class="src">公安部令第61号第25条 · 5号书 P236</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="memory" id="jiyi">
+    <h2>一条线串记</h2>
+    <div class="memory-grid">
+      <div class="memory-item"><b>大商</b><span>5 日报告、3 日转岗；月柴油、月单项；季研判、季清洗；半年联动培训、年检 10 万联合。</span></div>
+      <div class="memory-item"><b>高层</b><span>公共半月、住宅月；分预案季、公共半年训；超高半年练、住宅年训；非超高年练、年评估。</span></div>
+      <div class="memory-item"><b>培训演练</b><span>重点年训半年练；人密半年训；机关季检、其他月检；高危季练、其他年练；内部月练。</span></div>
+      <div class="memory-item"><b>其他</b><span>三备 5 日、检查 10 工、异议 15 日、鉴定 90 日、档案 6 年、人密月会、重点日巡、聚集 2 时。</span></div>
+    </div>
+  </section>
+
+  <section class="tips" id="yicuo">
+    <div class="section-head">
+      <div>
+        <h2>易错点</h2>
+        <p>这些地方最容易把「年 / 半年 / 季度 / 工作日」记串。</p>
+      </div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip"><div class="tip-no">1</div><p><b>重点单位</b>是「培训年、演练半年」，两个周期不同，最易混。</p></div>
+      <div class="tip"><div class="tip-no">2</div><p><b>人员密集场所培训半年</b>；若同时是重点单位，按更严的半年，不按重点单位的年。</p></div>
+      <div class="tip"><div class="tip-no">3</div><p><b>高层</b>：公共半月检查、住宅月检查；分预案季度；全要素超高层半年、非超高年；评估每年。</p></div>
+      <div class="tip"><div class="tip-no">4</div><p><b>大商</b>：月单项、半年联动；年全面检测；只有 <b>&gt;10 万㎡</b> 才每年与消防救援机构联合演练。</p></div>
+      <div class="tip"><div class="tip-no">5</div><p><b>三项备案是 5 个工作日</b>，不是 5 个自然日；<b>维保报告是 5 日</b>，两者不要混。</p></div>
+      <div class="tip"><div class="tip-no">6</div><p><b>技术档案 6 年</b>指消防技术服务档案；单位消防档案是「原始资料长期、值班巡查 1 年、检测维保 5 年」。</p></div>
+      <div class="tip"><div class="tip-no">7</div><p><b>公众聚集营业 2 小时巡查</b> vs <b>重点单位每日巡查</b>：前者是营业期间频次，后者是重点单位日巡查。</p></div>
+      <div class="tip"><div class="tip-no">8</div><p><b>10 个工作日</b>是公众聚集场所消防检查（不采用告知承诺）；告知承诺是 <b>1 个工作日许可 + 20 日内核查</b>。</p></div>
+    </div>
+  </section>
+
+  <section class="conflict" id="chongtu">
+    <h2>冲突标注：P318 表与 P313/P335 表不一致</h2>
+    <p>5号书 <code>P318</code> 的「高层民用建筑周期检查表」写：分预案演练每半年、&gt;100m 全要素每年、≤100m 全要素每半年。这与 <code>P313</code>、<code>P335</code>、竖向 <code>P175</code>、小红书、电子卡42章经的「分预案季度、&gt;100m 半年、≤100m 年」相反。本表按 <b>P313/P335/竖向 P175</b> 口径；P318 表疑似排版或 OCR 错位，建议对照原书再核。</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-in">
+    <div><b>法律周期速查表</b> · 一级消防工程师综合能力 · 2026-10-28 整理</div>
+    <div>来源：5号书 P335 / 奇门遁甲竖向 P175 / 公安部令第61号、第121号 / 大商规则 / 高层规定</div>
+  </div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var input = document.getElementById('search');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.group'));
+  var count = document.getElementById('count');
+
+  function filter(){
+    var q = (input.value || '').trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var hay = (card.getAttribute('data-key') || '') + ' ' + card.textContent;
+      var hit = !q || hay.toLowerCase().indexOf(q) !== -1;
+      card.classList.toggle('hidden', !hit);
+      if(hit) visible++;
+    });
+    groups.forEach(function(group){
+      var any = group.querySelectorAll('.card:not(.hidden)').length > 0;
+      group.classList.toggle('hidden', !any);
+    });
+    count.textContent = q ? ('命中 ' + visible + ' 条') : '共 32 条';
+  }
+  input.addEventListener('input', filter);
+
+  var backtop = document.getElementById('backtop');
+  window.addEventListener('scroll', function(){
+    backtop.classList.toggle('show', window.scrollY > 500);
+  }, {passive:true});
+  backtop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id); });
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px', threshold:0});
+    targets.forEach(function(t){ if(t) io.observe(t); });
+  }
+})();
+</script>
+</body>
+</html>
