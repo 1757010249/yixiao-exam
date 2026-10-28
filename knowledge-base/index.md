@@ -118,6 +118,7 @@
 | 宿舍合建 | fire-partition.md |
 | 中庭 | fire-partition.md |
 | 防火分隔 | fire-separation.md |
+| 剧场舞台防火隔墙（上3下2闷花卷放1.5） | fire-separation.md |
 | 防火墙 | fire-separation.md |
 | 防火卷帘 | fire-separation.md |
 | 防火门 | fire-separation.md |
@@ -140,6 +141,7 @@
 | 干粉灭火 | dry-powder.md |
 | BC/ABC干粉 | dry-powder.md |
 | 自动消防炮 | auto-tracking-jet.md |
+| 自动跟踪射流选型矩阵 | auto-tracking-jet.md |
 | 喷射型自动射流 | auto-tracking-jet.md |
 | 喷洒型自动射流 | auto-tracking-jet.md |
 | 高大空间 | auto-tracking-jet.md |
@@ -157,6 +159,7 @@
 | 消防水泵 | water-supply.md |
 | 水泵铭牌/选型（刘洋笑气功） | water-supply.md |
 | 管道选材（媳妇食土喝风） | water-supply.md |
+| 埋地管道覆土/冰冻线 | water-supply.md |
 | 水流方向永久标志（骑驴能减脂） | water-supply.md |
 | 流量和压力测试装置 | water-supply.md |
 | 试水管排水 | water-supply.md |
@@ -181,6 +184,7 @@
 | 金可明封 | alarm.md |
 | 金可彼岸 | alarm.md |
 | 应急照明 | emergency-lighting.md |
+| 照度口诀（熟人楼前搬砖） | emergency-lighting.md |
 | 防排烟 | smoke-control.md |
 | 管道连接 | pipe-connection.md |
 | 螺纹连接 | pipe-connection.md |
@@ -188,18 +192,21 @@
 | 沟槽连接 | pipe-connection.md |
 | 管径分界 | pipe-connection.md |
 | 气体灭火 | gas-extinguishing.md |
+| 气体灭火模拟试验（调试/验收/年检） | gas-extinguishing.md |
 | 储存装置铭牌（鸡鸭明日变凉皮） | gas-extinguishing.md |
 | 预制灭火装置数量辨析 | gas-extinguishing.md, dry-powder.md, water-mist.md |
 | 消防安全责任 | responsibility.md |
 | 消防安全重点单位 | responsibility.md |
 | 特殊建设工程（51号令14条） | responsibility.md |
 | 大型商业综合体 | commercial-complex.md |
+| 疏散引导箱 | commercial-complex.md |
 | 水泵接合器禁停3m（大型商业综合体） | commercial-complex.md |
 | 管理周期 | periods-summary.md |
 | 培训演练 | periods-summary.md |
 | 培训频次 | drill-training.md, responsibility.md |
 | 演练频次 | drill-training.md |
 | 维保周期 | periods-summary.md, inspection.md, water-mist.md |
+| 细水雾持续喷雾时间 | water-mist.md |
 | 巡检/检查周期 | periods-summary.md |
 | 特殊建筑 | special-buildings.md |
 | 锅炉房 | special-buildings.md, building-plane.md |
@@ -215,6 +222,7 @@
 | 专职消防队 | commercial-complex.md |
 | 微型消防站 | commercial-complex.md |
 | 防火检查/巡查 | inspection.md |
+| 建筑消防设施巡查内容 | inspection.md |
 | 消防档案 | inspection.md |
 | 重大火灾隐患 | inspection.md |
 | 应急预案 | inspection.md |
